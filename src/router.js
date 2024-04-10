@@ -4,7 +4,6 @@ import ProductsList from './pages/ProductsList.vue';
 import UserCart from './pages/UserCart.vue';
 import ShopAdmin from './pages/ShopAdmin.vue';
 import test from './pages/test.vue';
-// import ProductMain from './pages/Products.vue';s
 
 const router = createRouter({
   history: createWebHistory(),
