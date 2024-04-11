@@ -32,12 +32,13 @@ export default {
 
 <style scoped>
   
-  ul {
+  section ul {
     list-style: none;
     margin: 2rem auto;
     padding: 0;
     max-width: 80%;
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    gap: 1%;
+    grid-template-columns: 24% 24% 24% 24%;
   }
 </style>

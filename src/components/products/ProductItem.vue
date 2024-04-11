@@ -40,27 +40,20 @@ li {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 1rem;
 }
-
-.product__data {
-  display: flex;
-}
-
 .product__image {
-  margin-right: 1rem;
-}
-
-.product__image img {
+  text-align: center;
+  & img {
   height: 10rem;
   width: 10rem;
   object-fit: cover;
 }
-
-.product__text h3 {
-  margin: 0 0 0.5rem 0;
 }
 
 .product__text h4 {
   margin: 0;
+  & h3 {
+  margin: 0 0 0.5rem 0;
+}
 }
 
 .product__actions {
@@ -75,11 +68,10 @@ button {
   border: 1px solid #45006d;
   padding: 0.5rem 1.5rem;
   border-radius: 30px;
-}
-
-button:hover,
-button:active {
+  & hover,
+  & active {
   background-color: #760ab4;
   border-color: #760ab4;
+}
 }
 </style>

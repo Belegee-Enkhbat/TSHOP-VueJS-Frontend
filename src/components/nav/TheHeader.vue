@@ -23,7 +23,7 @@
         </li>
       </ul>
     </nav>
-    <div>
+    <div class="UserButton">
       <button v-if="!isLoggedIn" @click="login">Нэвтрэх</button>
       <button v-if="isLoggedIn" @click="logout">Гарах</button>
     </div>
@@ -85,15 +85,13 @@ a {
   font-weight: bold;
   border-bottom: 2px solid transparent;
   padding-bottom: 0.25rem;
-}
-
-a:hover,
-a:active,
-a.router-link-active {
+  & hover,
+  & active,
+  & router-link-active {
   color: white;
   border-color: white;
 }
-
+}
 button {
   font: inherit;
   cursor: pointer;
@@ -102,10 +100,11 @@ button {
   background-color: transparent;
   color: white;
   border-radius: 30px;
-}
-
-button:hover,
-button:active {
+  & hover,  & active {
   background-color: #f0d5ff;
+}
+}
+.UserButton{
+  padding-right: 3rem;
 }
 </style>
