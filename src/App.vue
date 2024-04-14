@@ -2,15 +2,18 @@
   <section id="app">
   <the-header></the-header>
   <router-view></router-view>
+  <the-footer></the-footer>
   </section>
 </template>
 
 <script>
 import TheHeader from './components/nav/TheHeader.vue';
+import TheFooter from './components/nav/TheFooter.vue';
 
 export default {
   components: {
-    TheHeader
+    TheHeader,
+    TheFooter
   },
 };
 </script>
