@@ -41,4 +41,10 @@ export default {
     gap: 1%;
     grid-template-columns: 24% 24% 24% 24%;
   }
+  .background-img {
+   width: 100%;
+    & img{
+      width: 100%;
+    }
+  }
 </style>

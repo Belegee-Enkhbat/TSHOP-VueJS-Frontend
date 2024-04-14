@@ -9,46 +9,41 @@ export default {
   },
   mutations: {
     addProductToCart(state, payload) {
-      const productData = payload;
-      const productInCartIndex = state.items.findIndex(
-        (ci) => ci.productId === productData.id
-      );
+      const { id, title, image, price } = payload;
+      const productInCart = state.items.find(item => item.productId === id);
 
-      if (productInCartIndex >= 0) {
-        state.items[productInCartIndex].qty++;
+      if (productInCart) {
+        productInCart.qty++;
       } else {
-        const newItem = {
-          productId: productData.id,
-          title: productData.title,
-          image: productData.image,
-          price: productData.price,
+        state.items.push({
+          productId: id,
+          title,
+          image,
+          price,
           qty: 1,
-        };
-        state.items.push(newItem);
+        });
       }
       state.qty++;
-      state.total += productData.price;
+      state.total += price;
     },
     removeProductFromCart(state, payload) {
       const prodId = payload.productId;
-      const productInCartIndex = state.items.findIndex(
-        (cartItem) => cartItem.productId === prodId
-      );
-      const prodData = state.items[productInCartIndex];
-      state.items.splice(productInCartIndex, 1);
+      const productIndex = state.items.findIndex(item => item.productId === prodId);
+      const prodData = state.items[productIndex];
       state.qty -= prodData.qty;
       state.total -= prodData.price * prodData.qty;
+      state.items.splice(productIndex, 1);
     },
   },
   actions: {
-    addToCart(context, payload) {
-      const prodId = payload.id;
-      const products = context.rootGetters['prods/products'];
-      const product = products.find(prod => prod.id === prodId);
-      context.commit('addProductToCart', product);
+    addToCart({ commit, rootGetters }, payload) {
+      const { id } = payload;
+      const products = rootGetters['prods/products'];
+      const product = products.find(prod => prod.id === id);
+      commit('addProductToCart', product);
     },
-    removeFromCart(context, payload) {
-      context.commit('removeProductFromCart', payload);
+    removeFromCart({ commit }, payload) {
+      commit('removeProductFromCart', payload);
     }
   },
   getters: {
@@ -56,7 +51,7 @@ export default {
       return state.items;
     },
     totalSum(state) {
-      return state.total;
+      return state.total.toFixed(2);
     },
     quantity(state) {
       return state.qty;

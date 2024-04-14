@@ -1,12 +1,12 @@
 <template>
   <header>
     <h1>
-      <router-link to="/">TShop</router-link>
+      <router-link to="/home">TShop</router-link>
     </h1>
     <nav>
       <ul>
         <li>
-          <router-link to="/products">Бүтээгдэхүүн</router-link>
+          <router-link to="/products">Бараа</router-link>
         </li>
         <li>
           <router-link to="/cart">Сагс</router-link>
@@ -21,12 +21,15 @@
         <li>
           <router-link to="/test">Бидэнтэй холбогдох</router-link>
         </li>
+        <li>
+            <div class="UserButton">
+              <button v-if="!isLoggedIn" @click="login">Нэвтрэх</button>
+              <button v-if="isLoggedIn" @click="logout">Гарах</button>
+            </div>
+        </li>
       </ul>
     </nav>
-    <div class="UserButton">
-      <button v-if="!isLoggedIn" @click="login">Нэвтрэх</button>
-      <button v-if="isLoggedIn" @click="logout">Гарах</button>
-    </div>
+    
   </header>
 </template>
 
@@ -55,7 +58,6 @@ export default {
 header {
   height: 5rem;
   background-color: rgb(16, 2, 2);
-  border-radius: 0 0 1rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

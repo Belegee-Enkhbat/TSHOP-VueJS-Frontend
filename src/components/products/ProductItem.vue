@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="product__actions">
-      <button @click="addToCart">Add to Cart</button>
+      <button @click="addToCart">Сагсанд нэмэх</button>
     </div>
   </li>
 </template>
@@ -43,7 +43,6 @@ li {
 .product__image {
   text-align: center;
   & img {
-  height: 10rem;
   width: 10rem;
   object-fit: cover;
 }
@@ -63,15 +62,15 @@ li {
 button {
   font: inherit;
   cursor: pointer;
-  background-color: #45006d;
+  background-color: rgb(155, 0, 0);
   color: white;
-  border: 1px solid #45006d;
+  border: 1px solid rgb(155, 0, 0);
   padding: 0.5rem 1.5rem;
-  border-radius: 30px;
+  border-radius: 5px;
   & hover,
   & active {
-  background-color: #760ab4;
-  border-color: #760ab4;
+  background-color: red;
+  border-color: red;
 }
 }
 </style>
