@@ -6,7 +6,7 @@ export default {
         {
           id: 'p1',
           image:
-            'public/iphone-compare-iphone-15-pro-202309.jpeg',
+            '../../public/iphone-compare-iphone-15-pro-202309.jpeg',
           title: 'Book Collection',
           description:
             'A collection of must-read books. All-time classics included!',
@@ -15,7 +15,7 @@ export default {
         {
           id: 'p2',
           image:
-            'public/iphone-compare-iphone-15-pro-202309.jpeg',
+            '../../public/iphone-compare-iphone-15-pro-202309.jpeg',
           title: 'Mountain Tent',
           description: 'A tent for the ambitious outdoor tourist.',
           price: 129.99
@@ -23,7 +23,7 @@ export default {
         {
           id: 'p3',
           image:
-            'public/iphone-compare-iphone-15-pro-202309.jpeg',
+            '../../public/iphone-compare-iphone-15-pro-202309.jpeg',
           title: 'Food Box',
           description:
             'May be partially expired when it arrives but at least it is cheap!',
@@ -32,7 +32,7 @@ export default {
         {
           id: 'p4',
           image:
-            'public/iphone-compare-iphone-15-pro-202309.jpeg',
+            '../../public/iphone-compare-iphone-15-pro-202309.jpeg',
           title: 'Food Box',
           description:
             'May be partially expired when it arrives but at least it is cheap!',
@@ -41,7 +41,7 @@ export default {
         {
           id: 'p5',
           image:
-            'public/iphone-compare-iphone-15-pro-202309.jpeg',
+            '../../public/iphone-compare-iphone-15-pro-202309.jpeg',
           title: 'Food Box',
           description:
             'May be partially expired when it arrives but at least it is cheap!',
@@ -50,7 +50,7 @@ export default {
         {
           id: 'p6',
           image:
-            'public/iphone-compare-iphone-15-pro-202309.jpeg',
+            '../../public/iphone-compare-iphone-15-pro-202309.jpeg',
           title: 'Food Box',
           description:
             'May be partially expired when it arrives but at least it is cheap!',
