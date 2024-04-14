@@ -1,7 +1,7 @@
 <template>
     <section>
       <article class="background-img">
-        <img src="/Users/belgee/Desktop/TUSS/VueJS-Deployment/public/headphones-paint-color-splash-digital-art-4k-wallpaper-uhdpaper.com-22@0@j.jpg" alt="background">
+        <img src="/public/headphones-paint-color-splash-digital-art-4k-wallpaper-uhdpaper.com-22@0@j.jpg" alt="background">
       </article>
       <ul>
         <product-item
