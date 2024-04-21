@@ -1,24 +1,19 @@
-# vue-project
+# shop_vue
 
-# Deployed website:
-```sh
-https://vue-js-deployment.vercel.app/
+## Project setup
 ```
-
-## Project Setup
-
-```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
+### Compiles and hot-reloads for development
+```
+npm run serve
 ```
 
-### Compile and Minify for Production
-
-```sh
+### Compiles and minifies for production
+```
 npm run build
 ```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
