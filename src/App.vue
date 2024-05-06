@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <!-- <Header/> -->
+    <Header/>
 
     <div class="is-loading-bar has-text-centered" v-bind:class="{'is-loading': $store.state.isLoading }">
       <div class="lds-dual-ring"></div>
@@ -22,11 +22,11 @@
 
 import axios from "axios"
 import Footer from "@/components/Footer.vue";
-// import Header from "@/components/Header.vue";
+import Header from "@/components/Header.vue";
 
 export default{
   components: {
-    // Header,
+    Header,
     Footer
   },
   data() {

@@ -69,50 +69,37 @@
   </nav>
 </template>
 <script>
-  import App from "@/App.vue";
+import axios from "axios";
 
-  export default {
-    components: {App},
-    data(){
-      return{
-        showMobileMenu: false,
-      }
-    },
-    computed: {
-    cartTotalLength() {
-      let totalLength = 0
-
-      for (let i = 0; i < this.cart.items.length; i++) {
-        totalLength += this.cart.items[i].quantity
-      }
-
-      return totalLength
-    }
-  },
+export default {
   data() {
     return {
       showMobileMenu: false,
       cart: {
         items: []
-       }
-     }
-    },
+      }
+    }
+  },
+  computed: {
+    cartTotalLength() {
+      return this.cart.items.reduce((total, item) => total + item.quantity, 0);
+    }
+  },
   beforeCreate() {
-    this.$store.commit('initializeStore')
-
-    const token = this.$store.state.token
-
+    this.$store.commit('initializeStore');
+    const token = this.$store.state.token;
     if (token) {
-        axios.defaults.headers.common['Authorization'] = "Token " + token
+      axios.defaults.headers.common['Authorization'] = "Token " + token;
     } else {
-        axios.defaults.headers.common['Authorization'] = ""
+      axios.defaults.headers.common['Authorization'] = "";
     }
   },
   mounted() {
-    this.cart = this.$store.state.cart
-  },
+    this.cart = this.$store.state.cart;
   }
+}
 </script>
+
 <style>
 .navbar.is-light.menu {
   background-color: black;
