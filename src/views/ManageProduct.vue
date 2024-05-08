@@ -20,11 +20,11 @@
       </div>
       <div>
         <label for="image">Image:</label>
-        <input type="file" id="image" ref="image" @change="handleFileUpload('image', $event)">
+        <input type="file" id="image" @change="handleFileUpload('image', $event)">
       </div>
       <div>
         <label for="thumbnail">Thumbnail:</label>
-        <input type="file" id="thumbnail" ref="thumbnail" @change="handleFileUpload('thumbnail', $event)">
+        <input type="file" id="thumbnail" @change="handleFileUpload('thumbnail', $event)">
       </div>
       <button type="submit">Submit</button>
     </form>
@@ -41,8 +41,8 @@ const postData = ref({
   description: '',
   price: 0.00,
   category_id: 1,  // Default or dynamic category ID
-  image: null,
-  thumbnail: null
+  image: 'uploads/gettyimages-999362376-612x612.jpg',
+  thumbnail: '/uploads/uploads/gettyimages-999362376-612x612.jpg'
 });
 
 const handleFileUpload = (key, event) => {

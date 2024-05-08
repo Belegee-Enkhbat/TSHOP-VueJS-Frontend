@@ -3,6 +3,7 @@
   <nav class="navbar is-light menu">
     <div class="navbar-brand">
       <router-link to="/" class="navbar-item"><strong>TSHOP</strong></router-link>
+    </div>
 
 
 
@@ -28,17 +29,17 @@
       </div>
 
       <div class="navbar-end">
-        <div v-if="$store.state.user=='super'">
-          <router-link to="/ManageProduct" class="navbar-item">Бүтээгдэхүүн нэмэх</router-link>
-        </div>
         <div class="navbar-item">
+          <div class="urlclass" v-if="$store.state.user=='super'">
+            <router-link to="/ManageProduct" class="navbar-item"><h4>Бүтээгдэхүүн нэмэх</h4></router-link>
+          </div>
           <router-link to="/about" class="navbar-item">
             <div class="urlclass">
               <h4>Бидэнтэй холбогдох</h4>
             </div>
           </router-link>
 
-          <router-link to="/furnitures" class="navbar-item">
+          <router-link to="/product" class="navbar-item">
             <div class="urlclass">
               <h4>Бараа</h4>
             </div>
@@ -60,7 +61,6 @@
           </div>
         </div>
       </div>
-    </div>
     </div>
 
   </nav>
@@ -171,6 +171,7 @@ export default {
 .router-link:hover .urlclass h4 {
   color: white;
 }
+
 
 
 
