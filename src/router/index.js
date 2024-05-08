@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import store from '../store'
-
 import Home from '../views/Home.vue'
 import Product from '../views/Product.vue'
 import Category from '../views/Category.vue'
@@ -13,6 +12,7 @@ import MyAccount from '../views/MyAccount.vue'
 import Checkout from '../views/Checkout.vue'
 import Success from '../views/Success.vue'
 import Article from '../views/Article.vue'
+import ManageProduct from "@/views/ManageProduct.vue";
 import About from '../views/About.vue'
 
 const routes = [
@@ -20,6 +20,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home
+  },
+  {
+    path: "/ManageProduct",
+    name: 'Manage Product',
+    component: ManageProduct,
   },
   {
     path: '/about',
@@ -70,6 +75,11 @@ const routes = [
         requireLogin: true
     }
   },
+  // {
+  //   path: '/chairs',
+  //   name: 'Chairs',
+  //   component: Category
+  // },
   {
     path: '/:category_slug/:product_slug',
     name: 'Product',

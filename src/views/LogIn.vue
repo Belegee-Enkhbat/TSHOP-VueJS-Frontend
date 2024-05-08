@@ -123,13 +123,14 @@ export default {
         }
     },
     mounted() {
-        document.title = 'Log In | Glee'
+        document.title = 'Log In '
     },
     methods: {
         async submitForm() {
             axios.defaults.headers.common["Authorization"] = ""
 
             localStorage.removeItem("token")
+            localStorage.removeItem("user")
 
             const formData = {
                 username: this.username,
@@ -142,9 +143,9 @@ export default {
                     const token = response.data.auth_token
 
                     this.$store.commit('setToken', token)
-                    
+                    this.$store.commit('setUser', this.username)
                     axios.defaults.headers.common["Authorization"] = "Token " + token
-
+                    localStorage.setItem("user", this.username)
                     localStorage.setItem("token", token)
 
                     const toPath = this.$route.query.to || '/cart'

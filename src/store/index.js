@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    user: localStorage.getItem('user'),
     cart: {
       items: [],
     },
@@ -10,6 +11,9 @@ export default createStore({
     isLoading: false
   },
   getters: {
+    getUser(){
+      return this.state.user;
+    }
   },
   mutations: {
     initializeStore(state) {
@@ -45,7 +49,11 @@ export default createStore({
     setToken(state, token) {
       state.token = token
       state.isAuthenticated = true
-  },  
+  },
+    setUser(state){
+      state.user=''
+      state.isAuthenticated = true;
+    },
     removeToken(state) {
       state.token = ''
       state.isAuthenticated = false

@@ -4,12 +4,7 @@
     <div class="navbar-brand">
       <router-link to="/" class="navbar-item"><strong>TSHOP</strong></router-link>
 
-      <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu" @click="showMobileMenu = !showMobileMenu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
+
 
     <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu }">
       <div class="navbar-start">
@@ -33,9 +28,9 @@
       </div>
 
       <div class="navbar-end">
-
-<!--        <router-link to="/furnitures" class="navbar-item">Бараа</router-link>-->
-
+        <div v-if="$store.state.user=='super'">
+          <router-link to="/ManageProduct" class="navbar-item">Бүтээгдэхүүн нэмэх</router-link>
+        </div>
         <div class="navbar-item">
           <router-link to="/about" class="navbar-item">
             <div class="urlclass">
@@ -43,7 +38,7 @@
             </div>
           </router-link>
 
-          <router-link to="/chairs" class="navbar-item">
+          <router-link to="/furnitures" class="navbar-item">
             <div class="urlclass">
               <h4>Бараа</h4>
             </div>
@@ -66,6 +61,8 @@
         </div>
       </div>
     </div>
+    </div>
+
   </nav>
 </template>
 <script>
