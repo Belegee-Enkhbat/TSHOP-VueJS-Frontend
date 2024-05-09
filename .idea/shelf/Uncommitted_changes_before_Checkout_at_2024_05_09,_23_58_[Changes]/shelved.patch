@@ -1,0 +1,126 @@
+Index: src/components/Header.vue
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n<template>\n  <nav class=\"navbar is-light menu\">\n    <div class=\"navbar-brand\">\n      <router-link to=\"/\" class=\"navbar-item\"><strong>TSHOP</strong></router-link>\n    </div>\n\n\n\n    <div class=\"navbar-menu\" id=\"navbar-menu\" v-bind:class=\"{'is-active': showMobileMenu }\">\n      <div class=\"navbar-start\">\n        <div class=\"navbar-item\">\n          <form method=\"get\" action=\"/search\">\n            <div class=\"field has-addons\">\n              <div class=\"control\">\n                <input type=\"text\" class=\"input\" placeholder=\"Хайх...\" name=\"query\">\n              </div>\n\n              <div class=\"control\">\n                <button class=\"button is-success\">\n                      <span class=\"icon\">\n                      <i class=\"fas fa-search\"></i>\n                      </span>\n                </button>\n              </div>\n            </div>\n          </form>\n        </div>\n      </div>\n\n      <div class=\"navbar-end\">\n        <div class=\"navbar-item\">\n          <div class=\"urlclass\" v-if=\"$store.state.user=='super'\">\n            <router-link to=\"/ManageProduct\" class=\"navbar-item\"><h4>Бүтээгдэхүүн нэмэх</h4></router-link>\n          </div>\n          <router-link to=\"/about\" class=\"navbar-item\">\n            <div class=\"urlclass\">\n              <h4>Бидэнтэй холбогдох</h4>\n            </div>\n          </router-link>\n\n          <router-link to=\"/product\" class=\"navbar-item\">\n            <div class=\"urlclass\">\n              <h4>Бараа</h4>\n            </div>\n          </router-link>\n          <div class=\"buttons\">\n\n            <template v-if=\"$store.state.isAuthenticated\">\n              <router-link to=\"/my-account\" class=\"button is-light\"><h4>Миний бүртгэл</h4></router-link>\n            </template>\n\n            <template v-else>\n              <router-link to=\"/log-in\" class=\"button is-light\"><h4>Нэвтрэх</h4></router-link>\n            </template>\n\n            <router-link to=\"/cart\" class=\"button is-success\">\n              <span class=\"icon\"><i class=\"fas fa-shopping-cart\"></i></span>\n              <span>Карт {{ cartTotalLength }}</span>\n            </router-link>\n          </div>\n        </div>\n      </div>\n    </div>\n\n  </nav>\n</template>\n<script>\nimport axios from \"axios\";\n\nexport default {\n  data() {\n    return {\n      showMobileMenu: false,\n      cart: {\n        items: []\n      }\n    }\n  },\n  computed: {\n    cartTotalLength() {\n      return this.cart.items.reduce((total, item) => total + item.quantity, 0);\n    }\n  },\n  beforeCreate() {\n    this.$store.commit('initializeStore');\n    const token = this.$store.state.token;\n    if (token) {\n      axios.defaults.headers.common['Authorization'] = \"Token \" + token;\n    } else {\n      axios.defaults.headers.common['Authorization'] = \"\";\n    }\n  },\n  mounted() {\n    this.cart = this.$store.state.cart;\n  }\n}\n</script>\n\n<style>\n.navbar.is-light.menu {\n  background-color: black;\n  color: white;\n}\n\n.navbar.is-light.menu * {\n  color: white;\n}\n\n\n\n#navbar-menu {\n  display: flex;\n  grid-template-columns: 50% 50%;\n\n  .navbar-start {\n    margin-left: auto;\n    margin-right: 0px;\n    justify-content: flex-end;\n    .navbar-item:hover{\n      color: black;\n    }\n    .navbar-item {\n      & .navbar-item:hover{\n        background-color: black;\n\n      }\n      width: 100%;\n      & router-link:hover{\n        color: black;\n      }\n      & a{\n        color: black;\n      }\n    & .urlclass:hover{\n      background-color: #3ec487;\n      color: white;\n    }\n      p {\n        color: white;\n      }\n    }\n  }\n\n  .navbar-end {\n    display: flex;\n    margin-left: 0px;\n  }\n\n  & form {\n    width: 150%;\n\n    & input {\n      width: 20rem;\n      color: black;\n    }\n  }\n}\n.urlclass:hover {\n  background-color: black;\n}\n\n.urlclass h4 {\n  color: inherit; \n}\n\n.router-link:hover .urlclass {\n  background-color: green;\n}\n\n.router-link:hover .urlclass h4 {\n  color: white;\n}\n\n\n\n\n</style>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Header.vue b/src/components/Header.vue
+--- a/src/components/Header.vue	
++++ b/src/components/Header.vue	
+@@ -9,7 +9,8 @@
+ 
+     <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu }">
+       <div class="navbar-start">
+-        <div class="navbar-item">
++        <div class="buttons">
++
+           <form method="get" action="/search">
+             <div class="field has-addons">
+               <div class="control">
+@@ -30,21 +31,18 @@
+ 
+       <div class="navbar-end">
+         <div class="navbar-item">
+-          <div class="urlclass" v-if="$store.state.user=='super'">
+-            <router-link to="/ManageProduct" class="navbar-item"><h4>Бүтээгдэхүүн нэмэх</h4></router-link>
+-          </div>
+-          <router-link to="/about" class="navbar-item">
+-            <div class="urlclass">
+-              <h4>Бидэнтэй холбогдох</h4>
+-            </div>
+-          </router-link>
+-
+-          <router-link to="/product" class="navbar-item">
+-            <div class="urlclass">
+-              <h4>Бараа</h4>
+-            </div>
+-          </router-link>
+-          <div class="buttons">
++
++
++          <div class="buttons">
++            <template v-if="$store.state.user=='super'">
++              <router-link to="/ManageProduct" class="button is-success"><h4>Бүтээгдэхүүн нэмэх</h4></router-link>
++            </template>
++            <router-link to="/about" class="button is-success">
++                <h4>Бидэнтэй холбогдох</h4>
++            </router-link>
++            <router-link to="/product" class="button is-success">
++                <h4>Бараа</h4>
++            </router-link>
+ 
+             <template v-if="$store.state.isAuthenticated">
+               <router-link to="/my-account" class="button is-light"><h4>Миний бүртгэл</h4></router-link>
+@@ -122,7 +120,7 @@
+     }
+     .navbar-item {
+       & .navbar-item:hover{
+-        background-color: black;
++        background-color: green;
+ 
+       }
+       width: 100%;
+@@ -133,8 +131,8 @@
+         color: black;
+       }
+     & .urlclass:hover{
+-      background-color: #3ec487;
+-      color: white;
++      background-color: green;
++      color: green;
+     }
+       p {
+         color: white;
+@@ -156,23 +154,6 @@
+     }
+   }
+ }
+-.urlclass:hover {
+-  background-color: black;
+-}
+-
+-.urlclass h4 {
+-  color: inherit; 
+-}
+-
+-.router-link:hover .urlclass {
+-  background-color: green;
+-}
+-
+-.router-link:hover .urlclass h4 {
+-  color: white;
+-}
+-
+-
+ 
+ 
+ </style>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"ed9252aa-fcc7-4223-9b6a-583e5373897e\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/components/Header.vue\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/Header.vue\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/views/ManageProduct.vue\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/views/ManageProduct.vue\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/views/MyAccount.vue\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/views/MyAccount.vue\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Vue Composition API Component\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 0\n}</component>\n  <component name=\"ProjectId\" id=\"2fqmkwmRgSHQERE9674LsCZVdS6\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"Node.js.index.js.executor\": \"Run\",\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"git-widget-placeholder\": \"main\",\n    \"last_opened_file_path\": \"/Users/belgee/Desktop/ICSI402-Software-Development/TeamProject/TSHOP-Frontend-VueJS\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"ts.external.directory.path\": \"/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  },\n  \"keyToStringList\": {\n    \"vue.recent.templates\": [\n      \"Vue Composition API Component\"\n    ]\n  }\n}]]></component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"ed9252aa-fcc7-4223-9b6a-583e5373897e\" name=\"Changes\" comment=\"\" />\n      <created>1714537129076</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1714537129076</updated>\n      <workItem from=\"1714537130120\" duration=\"632000\" />\n      <workItem from=\"1714991437936\" duration=\"109000\" />\n      <workItem from=\"1714991606440\" duration=\"152000\" />\n      <workItem from=\"1715068177710\" duration=\"4236000\" />\n      <workItem from=\"1715092163469\" duration=\"1086000\" />\n      <workItem from=\"1715182645408\" duration=\"2471000\" />\n      <workItem from=\"1715185266435\" duration=\"9707000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -7,7 +7,7 @@
+     <list default="true" id="ed9252aa-fcc7-4223-9b6a-583e5373897e" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/views/ManageProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ManageProduct.vue" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/views/LogIn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/LogIn.vue" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/views/MyAccount.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MyAccount.vue" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -71,7 +71,7 @@
+       <workItem from="1715068177710" duration="4236000" />
+       <workItem from="1715092163469" duration="1086000" />
+       <workItem from="1715182645408" duration="2471000" />
+-      <workItem from="1715185266435" duration="9707000" />
++      <workItem from="1715185266435" duration="12313000" />
+     </task>
+     <servers />
+   </component>
