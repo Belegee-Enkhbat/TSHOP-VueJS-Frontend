@@ -3,17 +3,11 @@
   <nav class="navbar is-light menu">
     <div class="navbar-brand">
       <router-link to="/" class="navbar-item"><strong>TSHOP</strong></router-link>
-
-      <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu" @click="showMobileMenu = !showMobileMenu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
     </div>
-
-    <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu }">
+  <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu }">
       <div class="navbar-start">
-        <div class="navbar-item">
+        <div class="buttons">
+
           <form method="get" action="/search">
             <div class="field has-addons">
               <div class="control">
@@ -33,22 +27,19 @@
       </div>
 
       <div class="navbar-end">
-
-<!--        <router-link to="/furnitures" class="navbar-item">Бараа</router-link>-->
-
         <div class="navbar-item">
-          <router-link to="/about" class="navbar-item">
-            <div class="urlclass">
-              <h4>Бидэнтэй холбогдох</h4>
-            </div>
-          </router-link>
 
-          <router-link to="/chairs" class="navbar-item">
-            <div class="urlclass">
-              <h4>Бараа</h4>
-            </div>
-          </router-link>
+
           <div class="buttons">
+            <template v-if="$store.state.user=='super'">
+              <router-link to="/ManageProduct" class="button is-success"><h4>Бүтээгдэхүүн нэмэх</h4></router-link>
+            </template>
+            <router-link to="/about" class="button is-success">
+                <h4>Бидэнтэй холбогдох</h4>
+            </router-link>
+            <router-link to="/product" class="button is-success">
+                <h4>Бараа</h4>
+            </router-link>
 
             <template v-if="$store.state.isAuthenticated">
               <router-link to="/my-account" class="button is-light"><h4>Миний бүртгэл</h4></router-link>
@@ -66,6 +57,7 @@
         </div>
       </div>
     </div>
+
   </nav>
 </template>
 <script>
@@ -125,7 +117,7 @@ export default {
     }
     .navbar-item {
       & .navbar-item:hover{
-        background-color: black;
+        background-color: green;
 
       }
       width: 100%;
@@ -136,8 +128,8 @@ export default {
         color: black;
       }
     & .urlclass:hover{
-      background-color: #3ec487;
-      color: white;
+      background-color: green;
+      color: green;
     }
       p {
         color: white;
@@ -159,22 +151,6 @@ export default {
     }
   }
 }
-.urlclass:hover {
-  background-color: black;
-}
-
-.urlclass h4 {
-  color: inherit; 
-}
-
-.router-link:hover .urlclass {
-  background-color: green;
-}
-
-.router-link:hover .urlclass h4 {
-  color: white;
-}
-
 
 
 </style>
