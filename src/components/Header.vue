@@ -2,14 +2,12 @@
 <template>
   <nav class="navbar is-light menu">
     <div class="navbar-brand">
-      <router-link to="/" class="navbar-item"><strong>TSHOP</strong></router-link>
+      <router-link to="/" class="title"><h3>TSHOP</h3></router-link>
     </div>
-
-
-
-    <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu }">
+  <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu }">
       <div class="navbar-start">
-        <div class="navbar-item">
+        <div class="buttons">
+
           <form method="get" action="/search">
             <div class="field has-addons">
               <div class="control">
@@ -30,21 +28,18 @@
 
       <div class="navbar-end">
         <div class="navbar-item">
-          <div class="urlclass" v-if="$store.state.user=='super'">
-            <router-link to="/ManageProduct" class="navbar-item"><h4>Бүтээгдэхүүн нэмэх</h4></router-link>
-          </div>
-          <router-link to="/about" class="navbar-item">
-            <div class="urlclass">
-              <h4>Бидэнтэй холбогдох</h4>
-            </div>
-          </router-link>
 
-          <router-link to="/product" class="navbar-item">
-            <div class="urlclass">
-              <h4>Бараа</h4>
-            </div>
-          </router-link>
+
           <div class="buttons">
+            <template v-if="$store.state.user=='super'">
+              <router-link to="/ManageProduct" class="button is-success"><h4>Бүтээгдэхүүн нэмэх</h4></router-link>
+            </template>
+            <router-link to="/about" class="button is-success">
+                <h4>Бидэнтэй холбогдох</h4>
+            </router-link>
+            <router-link to="/product" class="button is-success">
+                <h4>Бараа</h4>
+            </router-link>
 
             <template v-if="$store.state.isAuthenticated">
               <router-link to="/my-account" class="button is-light"><h4>Миний бүртгэл</h4></router-link>
@@ -106,9 +101,6 @@ export default {
 .navbar.is-light.menu * {
   color: white;
 }
-
-
-
 #navbar-menu {
   display: flex;
   grid-template-columns: 50% 50%;
@@ -117,25 +109,8 @@ export default {
     margin-left: auto;
     margin-right: 0px;
     justify-content: flex-end;
-    .navbar-item:hover{
-      color: black;
-    }
     .navbar-item {
-      & .navbar-item:hover{
-        background-color: black;
-
-      }
       width: 100%;
-      & router-link:hover{
-        color: black;
-      }
-      & a{
-        color: black;
-      }
-    & .urlclass:hover{
-      background-color: #3ec487;
-      color: white;
-    }
       p {
         color: white;
       }
@@ -156,21 +131,7 @@ export default {
     }
   }
 }
-.urlclass:hover {
-  background-color: black;
-}
 
-.urlclass h4 {
-  color: inherit; 
-}
-
-.router-link:hover .urlclass {
-  background-color: green;
-}
-
-.router-link:hover .urlclass h4 {
-  color: white;
-}
 
 
 
