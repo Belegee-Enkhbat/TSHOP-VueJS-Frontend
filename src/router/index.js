@@ -11,7 +11,6 @@ import LogIn from '../views/LogIn.vue'
 import MyAccount from '../views/MyAccount.vue'
 import Checkout from '../views/Checkout.vue'
 import Success from '../views/Success.vue'
-import Article from '../views/Article.vue'
 import ManageProduct from "@/views/ManageProduct.vue";
 import About from '../views/About.vue'
 
@@ -89,12 +88,7 @@ const routes = [
     path: '/:category_slug',
     name: 'Category',
     component: Category
-  },
-  {
-    path: '/articles/:article_slug',
-    name: 'Article',
-    component: Article
-  },
+  }
 ]
 
 const router = createRouter({

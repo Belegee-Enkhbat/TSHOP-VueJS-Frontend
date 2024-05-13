@@ -43,13 +43,13 @@
 
                 <div>
                     <form @submit.prevent="submitReview">
-                        <label for="content">Отзыв:</label>
+                        <label for="content">Сэтгэгдэл</label>
                         <textarea v-model="review.content" id="content" required></textarea>
 
-                        <label for="stars">Оценка:</label>
+                        <label for="stars">Од</label>
                         <input v-model.number="review.stars" type="number" id="stars" required max="5" />
 
-                        <button type="submit">Отправить отзыв</button>
+                        <button type="submit">Илгээх</button>
                     </form>
                 </div>
             </div>

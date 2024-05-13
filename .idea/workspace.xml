@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed9252aa-fcc7-4223-9b6a-583e5373897e" name="Changes" comment="">
+    <list default="true" id="ed9252aa-fcc7-4223-9b6a-583e5373897e" name="Changes" comment="header zasagdaw">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Article.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Product.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +72,18 @@
       <workItem from="1715092163469" duration="1086000" />
       <workItem from="1715182645408" duration="2471000" />
       <workItem from="1715185266435" duration="9707000" />
+      <workItem from="1715397247780" duration="10000" />
+      <workItem from="1715592711531" duration="1536000" />
     </task>
+    <task id="LOCAL-00001" summary="header zasagdaw">
+      <option name="closed" value="true" />
+      <created>1715272087365</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715272087365</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
