@@ -1,107 +1,102 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
-import store from '../store'
-import Home from '../views/Home.vue'
-import Product from '../views/Product.vue'
-import Category from '../views/Category.vue'
-import Search from '../views/Search.vue'
-import Cart from '../views/Cart.vue'
-import SignUp from '../views/SignUp.vue'
-import LogIn from '../views/LogIn.vue'
-import MyAccount from '../views/MyAccount.vue'
-import Checkout from '../views/Checkout.vue'
-import Success from '../views/Success.vue'
+import store from "../store";
+import Home from "../views/Home.vue";
+import Product from "../views/Product.vue";
+import Category from "../views/Category.vue";
+import Search from "../views/Search.vue";
+import Cart from "../views/Cart.vue";
+import SignUp from "../views/SignUp.vue";
+import LogIn from "../views/LogIn.vue";
+import MyAccount from "../views/MyAccount.vue";
+import Checkout from "../views/Checkout.vue";
+import Success from "../views/Success.vue";
 import ManageProduct from "@/views/ManageProduct.vue";
-import About from '../views/About.vue'
+import About from "../views/About.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: Home
+    path: "/",
+    name: "home",
+    component: Home,
   },
   {
     path: "/ManageProduct",
-    name: 'Manage Product',
+    name: "Manage Product",
     component: ManageProduct,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: "/about",
+    name: "about",
+    component: About,
   },
   {
-    path: '/search',
-    name: 'Search',
-    component: Search
+    path: "/search",
+    name: "Search",
+    component: Search,
   },
   {
-    path: '/sign-up',
-    name: 'SignUp',
-    component: SignUp
+    path: "/sign-up",
+    name: "SignUp",
+    component: SignUp,
   },
   {
-    path: '/log-in',
-    name: 'LogIn',
-    component: LogIn
+    path: "/log-in",
+    name: "LogIn",
+    component: LogIn,
   },
   {
-    path: '/my-account',
-    name: 'MyAccount',
+    path: "/my-account",
+    name: "MyAccount",
     component: MyAccount,
     meta: {
-      requireLogin: true
-    }
+      requireLogin: true,
+    },
   },
   {
-    path: '/cart',
-    name: 'Cart',
-    component: Cart
+    path: "/cart",
+    name: "Cart",
+    component: Cart,
   },
   {
-    path: '/cart/success',
-    name: 'Success',
+    path: "/cart/success",
+    name: "Success",
     component: Success,
   },
   {
-    path: '/cart/checkout',
-    name: 'Checkout',
+    path: "/cart/checkout",
+    name: "Checkout",
     component: Checkout,
     meta: {
-        requireLogin: true
-    }
-  },
-  // {
-  //   path: '/chairs',
-  //   name: 'Chairs',
-  //   component: Category
-  // },
-  {
-    path: '/:category_slug/:product_slug',
-    name: 'Product',
-    component: Product
+      requireLogin: true,
+    },
   },
   {
-    path: '/:category_slug',
-    name: 'Category',
-    component: Category
-  }
-]
+    path: "/:category_slug/:product_slug",
+    name: "Product",
+    component: Product,
+  },
+  {
+    path: "/:category_slug",
+    name: "Category",
+    component: Category,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requireLogin) && !store.state.isAuthenticated) {
-    next({ name: 'LogIn', query: { to: to.path } });
+  if (
+    to.matched.some((record) => record.meta.requireLogin) &&
+    !store.state.isAuthenticated
+  ) {
+    next({ name: "LogIn", query: { to: to.path } });
   } else {
-    next()
+    next();
   }
-})
+});
 
-export default router
+export default router;

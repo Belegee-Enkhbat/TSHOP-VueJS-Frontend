@@ -1,0 +1,127 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"ed9252aa-fcc7-4223-9b6a-583e5373897e\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/components/Header.vue\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/Header.vue\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/views/LogIn.vue\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/views/LogIn.vue\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/views/MyAccount.vue\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/views/MyAccount.vue\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 0\n}</component>\n  <component name=\"ProjectId\" id=\"2fqmkwmRgSHQERE9674LsCZVdS6\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"git-widget-placeholder\": \"test\",\n    \"last_opened_file_path\": \"/Users/belgee/Desktop/ICSI402-Software-Development/TeamProject/TSHOP-Frontend-VueJS\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"ts.external.directory.path\": \"/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"ed9252aa-fcc7-4223-9b6a-583e5373897e\" name=\"Changes\" comment=\"\" />\n      <created>1714537129076</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1714537129076</updated>\n      <workItem from=\"1714537130120\" duration=\"632000\" />\n      <workItem from=\"1714991437936\" duration=\"109000\" />\n      <workItem from=\"1714991606440\" duration=\"152000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8904bae7a4c485fb3a52428d2428dbeec40eb3e4)
++++ b/.idea/workspace.xml	(date 1715697150585)
+@@ -4,23 +4,22 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="ed9252aa-fcc7-4223-9b6a-583e5373897e" name="Changes" comment="">
++    <list default="true" id="ed9252aa-fcc7-4223-9b6a-583e5373897e" name="Changes" comment="oird push hiisengv nileen um zasaw blog bidend hereggv bsn bn del sul um zassan card table nemeh uldsen">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/views/LogIn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/LogIn.vue" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/views/MyAccount.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MyAccount.vue" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+-  <component name="Git.Settings">
+-    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-      <map>
+-        <entry key="$PROJECT_DIR$" value="main" />
+-      </map>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Vue Composition API Component" />
++      </list>
+     </option>
++  </component>
++  <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+@@ -34,21 +33,27 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "test",
+-    "last_opened_file_path": "/Users/belgee/Desktop/ICSI402-Software-Development/TeamProject/TSHOP-Frontend-VueJS",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Node.js.index.js.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;last_opened_file_path&quot;: &quot;/Users/belgee/Desktop/ICSI402-Software-Development/TeamProject/TSHOP-Frontend-VueJS&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  },
++  &quot;keyToStringList&quot;: {
++    &quot;vue.recent.templates&quot;: [
++      &quot;Vue Composition API Component&quot;
++    ]
+   }
+-}]]></component>
++}</component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -60,10 +65,41 @@
+       <workItem from="1714537130120" duration="632000" />
+       <workItem from="1714991437936" duration="109000" />
+       <workItem from="1714991606440" duration="152000" />
++      <workItem from="1715068177710" duration="4236000" />
++      <workItem from="1715092163469" duration="1086000" />
++      <workItem from="1715182645408" duration="2471000" />
++      <workItem from="1715185266435" duration="9707000" />
++      <workItem from="1715397247780" duration="10000" />
++      <workItem from="1715592711531" duration="2150000" />
++      <workItem from="1715622605117" duration="1602000" />
++      <workItem from="1715654754145" duration="666000" />
++      <workItem from="1715670602442" duration="443000" />
++    </task>
++    <task id="LOCAL-00001" summary="header zasagdaw">
++      <option name="closed" value="true" />
++      <created>1715272087365</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1715272087365</updated>
++    </task>
++    <task id="LOCAL-00002" summary="oird push hiisengv nileen um zasaw blog bidend hereggv bsn bn del sul um zassan card table nemeh uldsen">
++      <option name="closed" value="true" />
++      <created>1715594258971</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1715594258971</updated>
+     </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="header zasagdaw" />
++    <MESSAGE value="oird push hiisengv nileen um zasaw blog bidend hereggv bsn bn del sul um zassan card table nemeh uldsen" />
++    <option name="LAST_COMMIT_MESSAGE" value="oird push hiisengv nileen um zasaw blog bidend hereggv bsn bn del sul um zassan card table nemeh uldsen" />
++  </component>
+ </project>
+\ No newline at end of file

@@ -1,74 +1,77 @@
 <template>
   <div id="wrapper">
-    <Header/>
+    <Header />
 
-    <div class="is-loading-bar has-text-centered" v-bind:class="{'is-loading': $store.state.isLoading }">
+    <div
+      class="is-loading-bar has-text-centered"
+      v-bind:class="{ 'is-loading': $store.state.isLoading }"
+    >
       <div class="lds-dual-ring"></div>
     </div>
 
-    <div class="is-loading-bar has-text-centered" v-bind:class="{'is-loading': $store.state.isLoading }">
+    <div
+      class="is-loading-bar has-text-centered"
+      v-bind:class="{ 'is-loading': $store.state.isLoading }"
+    >
       <div class="lds-dual-ring"></div>
     </div>
 
     <section class="section">
-      <router-view/>
+      <router-view />
     </section>
 
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
-
-import axios from "axios"
+import axios from "axios";
 import Footer from "@/components/Footer.vue";
 import Header from "@/components/Header.vue";
 
-export default{
+export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
       showMobileMenu: false,
       cart: {
-        items: []
-       }
-     }
-    },
+        items: [],
+      },
+    };
+  },
   beforeCreate() {
-    this.$store.commit('initializeStore')
+    this.$store.commit("initializeStore");
 
-    const token = this.$store.state.token
+    const token = this.$store.state.token;
 
     if (token) {
-        axios.defaults.headers.common['Authorization'] = "Token " + token
+      axios.defaults.headers.common["Authorization"] = "Token " + token;
     } else {
-        axios.defaults.headers.common['Authorization'] = ""
+      axios.defaults.headers.common["Authorization"] = "";
     }
   },
   mounted() {
-    this.cart = this.$store.state.cart
+    this.cart = this.$store.state.cart;
   },
   computed: {
     cartTotalLength() {
-      let totalLength = 0
+      let totalLength = 0;
 
       for (let i = 0; i < this.cart.items.length; i++) {
-        totalLength += this.cart.items[i].quantity
+        totalLength += this.cart.items[i].quantity;
       }
 
-      return totalLength
-    }
-  }
-}
-
+      return totalLength;
+    },
+  },
+};
 </script>
 
-
 <style lang="scss">
-@import '../node_modules/bulma/';
+@import "../node_modules/bulma/";
 
 .lds-dual-ring {
   display: inline-block;
@@ -87,7 +90,6 @@ export default{
   animation: lds-dual-ring 1.2s linear infinite;
 }
 
-
 .is-loading-bar {
   height: 0;
   overflow: hidden;
@@ -101,11 +103,10 @@ export default{
 }
 
 .button.is-primary {
-    background-color: #a3bbc8;
-    border-color: transparent;
-    color: #fff;
+  background-color: #a3bbc8;
+  border-color: transparent;
+  color: #fff;
 }
-
 
 .button.is-success {
   background-color: black;
@@ -113,17 +114,16 @@ export default{
   color: white;
 }
 
-.button.is-light{
+.button.is-light {
   background-color: black;
   border-color: transparent;
   color: white;
 }
-.button.is-light:hover{
+.button.is-light:hover {
   background-color: #3ec487;
 }
 
-
-.section{
+.section {
   margin: 0px;
   padding: 0px;
 }
