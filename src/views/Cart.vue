@@ -2,17 +2,17 @@
     <div class="page-cart">
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Cart</h1>
+                <h1 class="title">Карт</h1>
             </div>
 
             <div class="column is-12 box">
                 <table class="table is-fullwidth" v-if="cartTotalLength">
                     <thead>
                         <tr>
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
+                            <th>Бүтээгдэхүүн</th>
+                            <th>Үнэ</th>
+                            <th>Тоо ширхэг</th>
+                            <th>Нийт</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -26,17 +26,17 @@
                     </tbody>
                 </table>
 
-                <p v-else>You don't have any products in your cart...</p>
+                <p v-else>Таны картанд ямар наган бүтээгдэхүүн байхгүй байна...</p>
             </div>
 
             <div class="column is-12 box">
-                <h2 class="subtitle">Summary</h2>
+                <h2 class="subtitle">Эцсийн дүн</h2>
 
                 <strong>${{ cartTotalPrice.toFixed(2) }}</strong>, {{ cartTotalLength }} items
 
                 <hr>
 
-                <router-link to="/cart/checkout" class="button is-dark">Proceed to checkout</router-link>
+                <router-link to="/cart/checkout" class="button is-dark">Захиалга өгөх</router-link>
             </div>
         </div>
     </div>

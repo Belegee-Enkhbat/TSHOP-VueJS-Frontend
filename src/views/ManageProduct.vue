@@ -35,6 +35,8 @@
 import {ref} from 'vue';
 import axios from 'axios';
 
+
+
 const postData = ref({
   name: '',
   slug: '',
@@ -62,7 +64,13 @@ const submitPost = async () => {
     console.log('Response status:', response.status);
     if (response.status === 201) { // Assuming 201 means successful creation
       console.log('Post created successfully:', response.data);
-      postData.value = { ...initialData };
+      postData.value.name = '';
+      postData.value.slug = '';
+      postData.value.description = '';
+      postData.value.price = 0.00;
+      postData.value.image = 'uploads/gettyimages-999362376-612x612.jpg';
+      postData.value.thumbnail = '/uploads/uploads/gettyimages-999362376-612x612.jpg';
+      window.alert("Бүтээгдэхүүн амжилттай үүслээ")
     } else {
       console.error('Failed to create post:', response.status, response.data);
     }

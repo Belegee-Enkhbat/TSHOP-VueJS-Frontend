@@ -55,7 +55,11 @@ export default {
 
             this.$store.commit('removeToken')
 
-            this.$router.push('/')
+          const toPath = this.$route.query.to || '/'
+          this.$router.push(toPath)
+          setTimeout(() => {
+            window.location.reload()
+          }, 100)
         },
         async getMyOrders() {
             this.$store.commit('setIsLoading', true)

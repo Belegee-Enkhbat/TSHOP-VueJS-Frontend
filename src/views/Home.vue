@@ -19,7 +19,7 @@
 </main>
     <div class="columns is-multiline">
       <div class="column is-12">
-          <h2 class="is-size-2 has-text-centered">Latest products</h2>
+          <h2 class="is-size-2 has-text-centered">Шинэ бүтээгдэхүүнүүд</h2>
       </div>
 
       <ProductBox 
@@ -204,6 +204,7 @@ export default {
     this.getLatestArticles()
 
     document.title = 'Home | Glee'
+
 
   },
   methods: {

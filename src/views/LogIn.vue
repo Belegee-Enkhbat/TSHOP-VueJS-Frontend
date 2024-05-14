@@ -11,18 +11,18 @@
     <div class="page-name__inner">
         <div class="container">
             <h2 class="page-name__title">
-                Log in
+                Нэвтрэх
             </h2>
             <div class="breadcrumbs">
                 <ul class="breadcrumbs__list">
                     <li class="breadcrumbs__item">
                         <a class="breadcrumbs__link" href="#">
-                            Home
+                            Үндсэн
                         </a>
                     </li>
                     <li class="breadcrumbs__item">
                         <a class="breadcrumbs__link" href="#">
-                            Log in
+                            Нэвтрэх
                         </a>
                     </li>
                 </ul>
@@ -148,9 +148,13 @@ export default {
                     localStorage.setItem("user", this.username)
                     localStorage.setItem("token", token)
 
-                    const toPath = this.$route.query.to || '/cart'
+                  const toPath = this.$route.query.to || '/'
+                  this.$router.push(toPath)
+                  setTimeout(() => {
+                    window.location.reload()
+                  }, 100)
 
-                    this.$router.push(toPath)
+
                 })
                 .catch(error => {
                     if (error.response) {

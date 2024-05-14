@@ -32,7 +32,7 @@
         <div class="columns is multiline">
 
             <div class="column is-9">
-                <h2 class="title">Reviews:</h2>
+                <h2 class="title">Үнэлгээ:</h2>
                 <div v-for="review in reviews" :key="review.id" class="review-wrapper">
                     <p class="title">Review</p>
                     <p>User_name: {{ review.user }}</p>
