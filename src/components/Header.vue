@@ -1,24 +1,17 @@
 <template>
   <nav class="navbar is-light menu">
     <div class="navbar-brand">
-      <router-link to="/" class="title"><h3>TSHOP</h3></router-link>
+      <router-link to="/" class="title">
+        <h3>TSHOP</h3>
+      </router-link>
     </div>
-    <div
-      class="navbar-menu"
-      id="navbar-menu"
-      v-bind:class="{ 'is-active': showMobileMenu }"
-    >
+    <div class="navbar-menu" id="navbar-menu" v-bind:class="{ 'is-active': showMobileMenu }">
       <div class="navbar-start">
         <div class="buttons">
           <form method="get" action="/search">
             <div class="field has-addons">
               <div class="control">
-                <input
-                  type="text"
-                  class="input"
-                  placeholder="Хайх..."
-                  name="query"
-                />
+                <input type="text" class="input" placeholder="Хайх..." name="query" />
               </div>
 
               <div class="control">
@@ -37,9 +30,9 @@
         <div class="navbar-item">
           <div class="buttons">
             <template v-if="$store.state.user == 'super'">
-              <router-link to="/ManageProduct" class="button is-success"
-                ><h4>Бүтээгдэхүүн нэмэх</h4></router-link
-              >
+              <router-link to="/ManageProduct" class="button is-success">
+                <h4>Бүтээгдэхүүн нэмэх</h4>
+              </router-link>
             </template>
 
             <router-link to="/product" class="button is-success">
@@ -48,24 +41,22 @@
             <router-link to="/cart" class="button is-success">
               <span class="icon"><i class="fas fa-shopping-cart"></i></span>
               <span>Сагс {{ cartTotalLength }}</span>
-            </router-link>  
+            </router-link>
             <router-link to="/about" class="button is-success">
               <h4>Бидэнтэй холбогдох</h4>
-            </router-link>            
+            </router-link>
             <template v-if="$store.state.isAuthenticated">
               <router-link to="/my-account" class="button is-light">
                 <h4>Миний бүртгэл</h4>
               </router-link>
-                <button @click="logout()" class="button is-danger">Log out</button>
-          </template>
-
-            <template v-else>
-              <router-link to="/log-in" class="button is-light"
-                ><h4>Нэвтрэх</h4></router-link
-              >
+              <button @click="logout()" class="button is-danger">Log out</button>
             </template>
 
-
+            <template v-else>
+              <router-link to="/log-in" class="button is-light">
+                <h4>Нэвтрэх</h4>
+              </router-link>
+            </template>
           </div>
         </div>
       </div>
@@ -145,18 +136,21 @@ export default {
 .navbar.is-light.menu * {
   color: white;
 }
+
 #navbar-menu {
   display: flex;
   /* grid-template-columns: 30% 70%; */
   justify-content: space-between;
 
   .navbar-start {
-    width: 50%; 
+    width: 50%;
     margin-left: auto;
     margin-right: 0px;
     justify-content: flex-end;
+
     .navbar-item {
       width: 100%;
+
       p {
         color: white;
       }
@@ -165,7 +159,7 @@ export default {
 
 
   .navbar-end {
-    width: 50%; 
+    width: 50%;
     display: flex;
     margin-left: 0px;
   }
