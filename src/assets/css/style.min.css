@@ -2183,22 +2183,33 @@ body {
 .footer-top__phone,
 .footer-top__email,
 .footer-top__text {
-  color: #7b7b7b;
+  color: white;
   font-size: 14px;
   line-height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  margin: 5px;
 }
 .footer-top__adress,
 .footer-top__text {
   line-height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .footer-top__text {
   width: 236px;
-  margin-bottom: 36px;
+  margin-top: 20px;
+  color: white;
 }
 .footer-top__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 5px;
+  padding: 5px;
 }
 .footer-top__form-input {
   padding: 15px;
@@ -2262,6 +2273,7 @@ body {
   color: #7b7b7b;
   font-size: 14px;
   line-height: 32px;
+  
 }
 .footer-bot__menu-link {
   line-height: 16px;

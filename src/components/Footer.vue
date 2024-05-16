@@ -2,23 +2,22 @@
   <footer>
     <div>
       <div class="footer-bot content">
-        <p class="footer-bot__copy">
-          ©2023 CopyRight Example. All rights reserved.
+        <p class="FOL">
+          ©2024 TSHOP. All rights reserved.
         </p>
-        <menu class="footer-bot__menu">
-          <li class="footer-bot__menu-item">
-            <a class="footer-bot__menu-link" href="#"> Home </a>
-          </li>
-          <li class="footer-bot__menu-item">
-            <a class="footer-bot__menu-link" href="#"> About </a>
-          </li>
-          <li class="footer-bot__menu-item">
-            <a class="footer-bot__menu-link" href="#"> Blog </a>
-          </li>
-          <li class="footer-bot__menu-item">
-            <a class="footer-bot__menu-link" href="#"> Contact </a>
-          </li>
-        </menu>
+        <div class=".footer-top__text">
+         
+          БИДНИЙГ ДАГААРАЙ.
+          <a href="https://www.facebook.com/TSHOP" target="_blank" >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/TSHOP" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+
+        <p class="FOL">
+        </p>
       </div>
     </div>
   </footer>
