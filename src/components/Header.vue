@@ -41,18 +41,23 @@
                 ><h4>Бүтээгдэхүүн нэмэх</h4></router-link
               >
             </template>
-            <router-link to="/about" class="button is-success">
-              <h4>Бидэнтэй холбогдох</h4>
-            </router-link>
+
             <router-link to="/product" class="button is-success">
               <h4>Бараа</h4>
             </router-link>
-
+            <router-link to="/cart" class="button is-success">
+              <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+              <span>Сагс {{ cartTotalLength }}</span>
+            </router-link>  
+            <router-link to="/about" class="button is-success">
+              <h4>Бидэнтэй холбогдох</h4>
+            </router-link>            
             <template v-if="$store.state.isAuthenticated">
-              <router-link to="/my-account" class="button is-light"
-                ><h4>Миний бүртгэл</h4></router-link
-              >
-            </template>
+              <router-link to="/my-account" class="button is-light">
+                <h4>Миний бүртгэл</h4>
+              </router-link>
+                <button @click="logout()" class="button is-danger">Log out</button>
+          </template>
 
             <template v-else>
               <router-link to="/log-in" class="button is-light"
@@ -60,10 +65,7 @@
               >
             </template>
 
-            <router-link to="/cart" class="button is-success">
-              <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-              <span>Карт {{ cartTotalLength }}</span>
-            </router-link>
+
           </div>
         </div>
       </div>
@@ -99,6 +101,38 @@ export default {
   mounted() {
     this.cart = this.$store.state.cart;
   },
+  methods: {
+    logout() {
+      axios.defaults.headers.common["Authorization"] = "";
+
+      localStorage.removeItem("token");
+      localStorage.removeItem("username");
+      localStorage.removeItem("userid");
+      localStorage.removeItem("user");
+
+      this.$store.commit("removeToken");
+
+      const toPath = this.$route.query.to || "/";
+      this.$router.push(toPath);
+      setTimeout(() => {
+        window.location.reload();
+      }, 100);
+    },
+    async getMyOrders() {
+      this.$store.commit("setIsLoading", true);
+
+      await axios
+        .get("/api/v1/orders/")
+        .then((response) => {
+          this.orders = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      this.$store.commit("setIsLoading", false);
+    },
+  },
 };
 </script>
 
@@ -113,9 +147,11 @@ export default {
 }
 #navbar-menu {
   display: flex;
-  grid-template-columns: 50% 50%;
+  /* grid-template-columns: 30% 70%; */
+  justify-content: space-between;
 
   .navbar-start {
+    width: 50%; 
     margin-left: auto;
     margin-right: 0px;
     justify-content: flex-end;
@@ -127,7 +163,9 @@ export default {
     }
   }
 
+
   .navbar-end {
+    width: 50%; 
     display: flex;
     margin-left: 0px;
   }
