@@ -1,7 +1,7 @@
 <template>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-bot">
+  <footer>
+    <div>
+      <div class="footer-bot content">
         <p class="footer-bot__copy">
           ©2023 CopyRight Example. All rights reserved.
         </p>

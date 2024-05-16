@@ -183,10 +183,10 @@
 }
 
 .footer-bot {
+    background-color: #191919;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     &__copy,
     &__menu-link {
         @extend %rubik-400;
@@ -212,6 +212,7 @@
     &__menu-item+.footer-bot__menu-item {
         padding: 0 13px;
         border-left: 1px solid #7b7b7b;
+        color: white;
     }
 
 }

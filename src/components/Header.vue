@@ -49,7 +49,7 @@
               <router-link to="/my-account" class="button is-light">
                 <h4>Миний бүртгэл</h4>
               </router-link>
-              <button @click="logoutHandler()" class="button is-danger">Log out</button>
+              <button @click="logoutHandler()" class="button is-danger">Гарах</button>
             </template>
 
             <template v-else>
