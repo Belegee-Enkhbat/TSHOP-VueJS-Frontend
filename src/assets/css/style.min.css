@@ -1970,6 +1970,9 @@ body {
   font-size: 36px;
   line-height: auto;
   color: #191919;
+  text-align: center; 
+  padding-left: 20px;
+  padding-top: 6px;
 }
 .breadcrumbs {
   display: -webkit-box;
