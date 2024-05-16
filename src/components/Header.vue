@@ -49,7 +49,7 @@
               <router-link to="/my-account" class="button is-light">
                 <h4>Миний бүртгэл</h4>
               </router-link>
-              <button @click="logout()" class="button is-danger">Log out</button>
+              <button @click="logoutHandler()" class="button is-danger">Log out</button>
             </template>
 
             <template v-else>
@@ -65,6 +65,7 @@
 </template>
 <script>
 import axios from "axios";
+import { logout } from "@/store/LogoutService";
 
 export default {
   data() {
@@ -93,36 +94,9 @@ export default {
     this.cart = this.$store.state.cart;
   },
   methods: {
-    logout() {
-      axios.defaults.headers.common["Authorization"] = "";
-
-      localStorage.removeItem("token");
-      localStorage.removeItem("username");
-      localStorage.removeItem("userid");
-      localStorage.removeItem("user");
-
-      this.$store.commit("removeToken");
-
-      const toPath = this.$route.query.to || "/";
-      this.$router.push(toPath);
-      setTimeout(() => {
-        window.location.reload();
-      }, 100);
-    },
-    async getMyOrders() {
-      this.$store.commit("setIsLoading", true);
-
-      await axios
-        .get("/api/v1/orders/")
-        .then((response) => {
-          this.orders = response.data;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-
-      this.$store.commit("setIsLoading", false);
-    },
+    logoutHandler() {
+      logout.call(this); 
+    }
   },
 };
 </script>

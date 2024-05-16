@@ -6,18 +6,14 @@
       </div>
 
       <div class="column is-12">
-        <button @click="logout()" class="button is-danger">Log out</button>
+        <button @click="logoutHandler()" class="button is-danger">Log out</button>
       </div>
 
       <hr />
 
       <div class="column is-12">
         <h2 class="subtitle">My orders</h2>
-        <OrderSummary
-          v-for="order in orders"
-          v-bind:key="order.id"
-          v-bind:order="order"
-        />
+        <OrderSummary v-for="order in orders" v-bind:key="order.id" v-bind:order="order" />
       </div>
     </div>
   </div>
@@ -25,7 +21,7 @@
 
 <script>
 import axios from "axios";
-
+import { logout } from "@/store/LogoutService";
 import OrderSummary from "@/components/OrderSummary.vue";
 
 export default {
@@ -44,21 +40,8 @@ export default {
     this.getMyOrders();
   },
   methods: {
-    logout() {
-      axios.defaults.headers.common["Authorization"] = "";
-
-      localStorage.removeItem("token");
-      localStorage.removeItem("username");
-      localStorage.removeItem("userid");
-      localStorage.removeItem("user");
-
-      this.$store.commit("removeToken");
-
-      const toPath = this.$route.query.to || "/";
-      this.$router.push(toPath);
-      setTimeout(() => {
-        window.location.reload();
-      }, 100);
+    logoutHandler() {
+      logout.call(this); 
     },
     async getMyOrders() {
       this.$store.commit("setIsLoading", true);
