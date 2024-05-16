@@ -60,20 +60,37 @@ const postData = ref({
   price: 0.0,
   category_id: 1, // Default or dynamic category ID
   image: "uploads/gettyimages-999362376-612x612.jpg",
-  thumbnail: "/uploads/uploads/gettyimages-999362376-612x612.jpg",
+  thumbnail: "",
+  thumbnail_name:"",
 });
 
 const handleFileUpload = (key, event) => {
-  postData.value[key] = event.target.files[0];
+  if (event.target.files && event.target.files.length > 0) {
+    // Get the uploaded file
+    const file = event.target.files[0]; 
+    console.log("zurag", file);
+    // Create a FileReader
+    const reader = new FileReader(); 
+    reader.onload = () => {
+      postData[key] = reader.result;
+      postData.thumbnail_name = file.name;
+    };
+    // Read the file as a data URL (base64 string)
+    reader.readAsDataURL(file); 
+  } else {
+    console.log("No file selected.");
+  }
 };
 
 const submitPost = async () => {
   try {
     const { id, ...postDataWithoutId } = postData.value; // Exclude the 'id' from postData
+    const postDataToSend = { ...postDataWithoutId, thumbnail: postData.thumbnail, thumbnail_name: postData.thumbnail_name };
+
     const csrfToken = getCookie("csrftoken");
     const response = await axios.post(
       "/api/v1/products/create_product",
-      postDataWithoutId,
+      postDataToSend,
       {
         headers: {
           "Content-Type": "application/json",
@@ -93,7 +110,8 @@ const submitPost = async () => {
       postData.value.thumbnail =
         "/uploads/uploads/gettyimages-999362376-612x612.jpg";
       window.alert("Бүтээгдэхүүн амжилттай үүслээ");
-    } else {
+    } 
+    else {
       console.error("Failed to create post:", response.status, response.data);
     }
   } catch (error) {
