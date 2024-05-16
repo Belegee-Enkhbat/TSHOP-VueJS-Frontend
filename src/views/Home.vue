@@ -13,13 +13,13 @@
     </main>
     <div class="columns is-multiline">
       <div class="column is-12">
-        <h2 class="is-size-2 has-text-centered">Шинэ бүтээгдэхүүнүүд</h2>
+        <h2 class="is-size-4 has-text-centered">Барааны ангилал</h2>
       </div>
 
-      <ProductBox
-        v-for="product in latestProducts"
-        v-bind:key="product.id"
-        v-bind:product="product"
+      <ProductCategoryBox
+        v-for="category in categories"
+        v-bind:key="category.id"
+        v-bind:category="category"
       />
     </div>
   </div>
@@ -173,31 +173,32 @@ require("@/assets/css/style.min.css");
 import axios from "axios";
 
 import ProductBox from "@/components/Productbox.vue";
+import ProductCategoryBox from "@/components/ProductCategoryBox.vue";
 
 export default {
   name: "Home",
   data() {
     return {
-      latestProducts: [],
-      latestArticles: [],
+      categories: [],
     };
   },
   components: {
-    ProductBox,
+    ProductCategoryBox,
   },
   mounted() {
-    this.getLatestProducts(), this.getLatestArticles();
+    this.getCategory();
 
     document.title = "Home | Glee";
   },
   methods: {
-    async getLatestProducts() {
+    async getCategory() {
       this.$store.commit("setIsLoading", true);
 
       await axios
-        .get("/api/v1/latest-products/")
+        .get("/api/v1/products/categories/")
         .then((response) => {
-          this.latestProducts = response.data;
+          this.categories = response.data;
+          console.log("cate", this.categories)
         })
         .catch((error) => {
           console.log(error);
@@ -206,16 +207,6 @@ export default {
       this.$store.commit("setIsLoading", false);
     },
 
-    async getLatestArticles() {
-      await axios
-        .get("/api/v1/latest-articles/")
-        .then((response) => {
-          this.latestArticles = response.data;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
   },
 };
 </script>

@@ -12,6 +12,8 @@ import MyAccount from "../views/MyAccount.vue";
 import Checkout from "../views/Checkout.vue";
 import Success from "../views/Success.vue";
 import ManageProduct from "@/views/ManageProduct.vue";
+import ManageCatalog from "@/views/ManageCatalog.vue";
+
 import About from "../views/About.vue";
 
 const routes = [
@@ -24,6 +26,11 @@ const routes = [
     path: "/ManageProduct",
     name: "Manage Product",
     component: ManageProduct,
+  },
+  {
+    path: "/ManageCatalog",
+    name: "Manage Catalog",
+    component: ManageCatalog,
   },
   {
     path: "/about",
