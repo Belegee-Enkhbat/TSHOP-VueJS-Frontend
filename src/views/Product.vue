@@ -59,7 +59,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .catalog-card2 {
   display: flex;
   justify-content: space-evenly;
@@ -68,7 +68,10 @@
     max-width: 700px;
   }
 }
-
+.columns.is-multiline{
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+}
 .review-wrapper {
   margin-bottom: 20px;
   border-bottom: 1px solid #a3bbc8;
