@@ -6,7 +6,7 @@
       </div>
 
       <div class="column is-12 box">
-        <table class="table is-fullwidth" v-if="cartTotalLength">
+        <table class="table is-fullwidth" v-if="getTotalQuantity">
           <thead>
             <tr>
               <th>Бүтээгдэхүүн</th>
@@ -33,8 +33,8 @@
       <div class="column is-12 box">
         <h2 class="subtitle">Эцсийн дүн</h2>
 
-        <strong>${{ cartTotalPrice.toFixed(2) }}</strong
-        >, {{ cartTotalLength }} items
+        <strong>${{ getTotalPrice.toFixed(2) }}</strong
+        >, {{ getTotalQuantity }} items
 
         <hr />
 
@@ -73,15 +73,11 @@ export default {
     },
   },
   computed: {
-    cartTotalLength() {
-      return this.cart.items.reduce((acc, curVal) => {
-        return (acc += curVal.quantity);
-      }, 0);
+    getTotalQuantity() {
+      return this.cart.items.reduce((total, item) => total + item.quantity, 0);
     },
-    cartTotalPrice() {
-      return this.cart.items.reduce((acc, curVal) => {
-        return (acc += curVal.product.price * curVal.quantity);
-      }, 0);
+    getTotalPrice() {
+      return this.cart.items.reduce((total, item) => total + item.product.price * item.quantity, 0);
     },
   },
 };

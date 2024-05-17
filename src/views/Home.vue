@@ -172,7 +172,7 @@
 require("@/assets/css/style.min.css");
 import axios from "axios";
 
-import ProductBox from "@/components/Productbox.vue";
+import ProductBox from "@/components/ProductBox.vue";
 import ProductCategoryBox from "@/components/ProductCategoryBox.vue";
 
 export default {

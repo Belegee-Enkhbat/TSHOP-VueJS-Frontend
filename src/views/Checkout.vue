@@ -28,8 +28,8 @@
           <tfoot>
             <tr>
               <td colspan="2">Total</td>
-              <td>{{ cartTotalLength }}</td>
-              <td>${{ cartTotalPrice.toFixed(2) }}</td>
+              <td>{{ getTotalQuantity }}</td>
+              <td>${{ getTotalPrice.toFixed(2) }}</td>
             </tr>
           </tfoot>
         </table>
@@ -103,7 +103,7 @@
 
         <div id="card-element" class="mb-5"></div>
 
-        <template v-if="cartTotalLength">
+        <template v-if="getTotalQuantity">
           <hr />
 
           <button class="button is-dark" @click="submitForm">
@@ -142,7 +142,7 @@ export default {
 
     this.cart = this.$store.state.cart;
 
-    if (this.cartTotalLength > 0) {
+    if (this.getTotalQuantity > 0) {
       this.stripe = Stripe(
         "pk_test_51O9tIsJcK0ecXttYZWpFHyQlMlMOz6JjFKVnNttjQeTT1TxthKdHxWrJdpF1JKCTvXUesNxwghH1sUmUnwKqcUKL00IC7BMnYy"
       );
@@ -247,12 +247,12 @@ export default {
     },
   },
   computed: {
-    cartTotalLength() {
+    getTotalQuantity() {
       return this.cart.items.reduce((acc, curVal) => {
         return (acc += curVal.quantity);
       }, 0);
     },
-    cartTotalPrice() {
+    getTotalPrice() {
       return this.cart.items.reduce((acc, curVal) => {
         return (acc += curVal.product.price * curVal.quantity);
       }, 0);
