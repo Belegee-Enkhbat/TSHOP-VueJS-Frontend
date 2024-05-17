@@ -1,4 +1,4 @@
-# shop_vue
+# TSHOP_vueJs
 
 ## Project setup
 ```
