@@ -11,7 +11,7 @@
 
     <div
       class="is-loading-bar has-text-centered"
-      v-bind:class="{ 'is-xloading': $store.state.isLoading }"
+      v-bind:class="{ 'is-loading': $store.state.isLoading }"
     >
       <div class="lds-dual-ring"></div>
     </div>
