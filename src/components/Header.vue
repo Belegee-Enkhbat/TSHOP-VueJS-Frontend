@@ -40,7 +40,7 @@
             </router-link>
             <router-link to="/cart" class="button is-success">
               <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-              <span>Сагс {{ cartTotalLength }}</span>
+              <span>Сагс {{ getTotalQuantity }}</span>
             </router-link>
             <router-link to="/about" class="button is-success">
               <h4>Бидэнтэй холбогдох</h4>
@@ -77,7 +77,7 @@ export default {
     };
   },
   computed: {
-    cartTotalLength() {
+    getTotalQuantity() {
       return this.cart.items.reduce((total, item) => total + item.quantity, 0);
     },
   },
