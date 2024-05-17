@@ -30,14 +30,14 @@
           <div class="field">
             <label>Username</label>
             <div class="control">
-              <input type="text" class="input" v-model="username" />
+              <input type="text" class="input" id="username" v-model="username" />
             </div>
           </div>
 
           <div class="field">
             <label>Password</label>
             <div class="control">
-              <input type="password" class="input" v-model="password" />
+              <input type="password" class="input" id="password" v-model="password" />
             </div>
           </div>
 
@@ -47,7 +47,7 @@
 
           <div class="field">
             <div class="control">
-              <button class="modal__btn-login">Log in</button>
+              <button class="modal__btn-login" id="login">Log in</button>
             </div>
           </div>
 
