@@ -2,16 +2,24 @@
   <div class="page-search">
     <div class="columns is-multiline">
       <div class="column is-12">
-        <h1 class="title">Search</h1>
+        <h1 class="title"></h1>
 
         <h2 class="is-size-5 has-text-grey">Search term: "{{ query }}"</h2>
       </div>
+      <div class="main">
+        <div class="filter">
+          <SideBarFilter></SideBarFilter>
+        </div>
+        <div class="product">
 
-      <ProductBox
-        v-for="product in products"
-        v-bind:key="product.id"
-        v-bind:product="product"
-      />
+        <ProductBox
+          v-for="product in products"
+          v-bind:key="product.id"
+          v-bind:product="product"
+        />
+        </div>
+
+      </div>
     </div>
   </div>
 </template>
@@ -19,11 +27,17 @@
 <script>
 import axios from "axios";
 import ProductBox from "@/components/Productbox.vue";
-
+import SideBarFilter from "../components/SideBarFilter.vue";
 export default {
   name: "Search",
+  computed: {
+    Productbox() {
+      return Productbox
+    }
+  },
   components: {
     ProductBox,
+    SideBarFilter,
   },
   data() {
     return {
@@ -61,3 +75,18 @@ export default {
   },
 };
 </script>
+<style scoped>
+
+.main{
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.product{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.column.is-3{
+  width: 100%;
+}
+</style>

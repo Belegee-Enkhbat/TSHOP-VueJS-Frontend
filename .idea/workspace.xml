@@ -5,26 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed9252aa-fcc7-4223-9b6a-583e5373897e" name="Changes" comment="some text validation">
+      <change afterPath="$PROJECT_DIR$/src/components/SideBarFilter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024_05_09,_23_58_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024_05_09__23_58__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/style.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CartItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OrderSummary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderSummary.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Productbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Productbox.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/About.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Category.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Checkout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Checkout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/LogIn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/LogIn.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/MyAccount.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MyAccount.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SignUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SignUp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Success.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Success.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Product.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Search.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +76,9 @@
       <workItem from="1714537130120" duration="632000" />
       <workItem from="1714991437936" duration="109000" />
       <workItem from="1714991606440" duration="152000" />
+      <workItem from="1715697882872" duration="1651000" />
+      <workItem from="1715925261827" duration="894000" />
+      <workItem from="1715930273685" duration="2897000" />
     </task>
     <servers />
   </component>
