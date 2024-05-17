@@ -18,12 +18,12 @@
 import axios from "axios";
 import { toast } from "bulma-toast";
 
-import ProductBox from "@/components/ProductBox.vue";
+import ProducCategoryBox from "@/components/ProductCategoryBox.vue";
 
 export default {
   name: "Category",
   components: {
-    ProductBox,
+    ProducCategoryBox,
   },
   data() {
     return {

@@ -11,7 +11,7 @@
 
     <div
       class="is-loading-bar has-text-centered"
-      v-bind:class="{ 'is-loading': $store.state.isLoading }"
+      v-bind:class="{ 'is-xloading': $store.state.isLoading }"
     >
       <div class="lds-dual-ring"></div>
     </div>
@@ -57,7 +57,7 @@ export default {
     this.cart = this.$store.state.cart;
   },
   computed: {
-    getTotalQuantity() {
+    cartTotalLength() {
       let totalLength = 0;
 
       for (let i = 0; i < this.cart.items.length; i++) {
@@ -71,7 +71,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../node_modules/bulma/";
+@import "../node_modules/bulma";
 
 .lds-dual-ring {
   display: inline-block;

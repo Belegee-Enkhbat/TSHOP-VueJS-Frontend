@@ -26,6 +26,7 @@
 
 <script>
 import axios from "axios";
+import ProductCategoryBox from "@/components/ProductCategoryBox.vue";
 import ProductBox from "@/components/Productbox.vue";
 import SideBarFilter from "../components/SideBarFilter.vue";
 export default {
