@@ -1,7 +1,9 @@
 <template>
   <div class="sidebar-filter">
-    <button @click="clearFilters">clear all</button>
+    <div class="buttons">
 
+    <button class="button is-success" id="clrallbutton" @click="clearFilters">clear all</button>
+    </div>
     <div class="filter-category">
       <h3>Category</h3>
       <label v-for="item in categories" :key="item">
@@ -96,5 +98,10 @@ export default {
 
 .filter-category input[type="radio"] {
   margin-right: 10px;
+}
+
+#clrallbutton{
+  background-color: #a3bbc8;
+  color: white;
 }
 </style>
