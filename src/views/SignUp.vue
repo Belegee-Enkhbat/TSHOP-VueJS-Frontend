@@ -14,7 +14,7 @@
           <div class="field">
             <label>Password</label>
             <div class="control">
-              <input type="password" class="input" v-model="password" />
+              <input type="password" class="input" v-model="password" @input="checkPasswordStrength" />
             </div>
           </div>
 
@@ -73,6 +73,7 @@ export default {
       if (this.password !== this.password2) {
         this.errors.push("The passwords doesn't match");
       }
+      this.checkPasswordStrength();
 
       if (!this.errors.length) {
         const formData = {
@@ -111,6 +112,22 @@ export default {
           });
       }
     },
-  },
+    checkPasswordStrength() {
+      this.errors = [];
+
+      if (this.password.length < 6) {
+        this.errors.push("Пассворд дор хаяж нэг том үсэг, нэг жижиг үсэг, нэг тусгай тэмдэгт, нэг тоо орсон байх ба 6-с дээш тэмдэгт агуулсан байх ёстой");
+      } else if (!/[A-Z]/.test(this.password)) {
+        this.errors.push("Пассворд дор хаяж нэг том үсэг, нэг жижиг үсэг, нэг тусгай тэмдэгт, нэг тоо орсон байх ба 6-с дээш тэмдэгт агуулсан байх ёстой");
+      } else if (!/[a-z]/.test(this.password)) {
+        this.errors.push("Пассворд дор хаяж нэг том үсэг, нэг жижиг үсэг, нэг тусгай тэмдэгт, нэг тоо орсон байх ба 6-с дээш тэмдэгт агуулсан байх ёстой");
+      } else if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(this.password)) {
+        this.errors.push("Пассворд дор хаяж нэг том үсэг, нэг жижиг үсэг, нэг тусгай тэмдэгт, нэг тоо орсон байх ба 6-с дээш тэмдэгт агуулсан байх ёстой");
+      } else if (!/\d/.test(this.password)) {
+        this.errors.push("Пассворд дор хаяж нэг том үсэг, нэг жижиг үсэг, нэг тусгай тэмдэгт, нэг тоо орсон байх ба 6-с дээш тэмдэгт агуулсан байх ёстой");
+      }
+    },
+
+  }
 };
 </script>
