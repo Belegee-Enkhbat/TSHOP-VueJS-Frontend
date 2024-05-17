@@ -10,16 +10,8 @@
     <div class="page-name">
       <div class="page-name__inner">
         <div class="container">
-          <h2 class="page-name__title">Нэвтрэх</h2>
+          <h2 class="title">Нэвтрэх</h2>
           <div class="breadcrumbs">
-            <ul class="breadcrumbs__list">
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#"> Үндсэн </a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#"> Нэвтрэх </a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -28,14 +20,14 @@
       <div class="column is-4 is-offset-4">
         <form class="modal__form" @submit.prevent="submitForm">
           <div class="field">
-            <label>Username</label>
+            <label>Хэрэглэгчийн нэр</label>
             <div class="control">
               <input type="text" class="input" id="username" v-model="username" />
             </div>
           </div>
 
           <div class="field">
-            <label>Password</label>
+            <label>Нууц үг</label>
             <div class="control">
               <input type="password" class="input" id="password" v-model="password" />
             </div>
@@ -47,13 +39,13 @@
 
           <div class="field">
             <div class="control">
-              <button class="modal__btn-login" id="login">Log in</button>
+              <button class="button is-dark" id="login">Нэвтрэх</button>
             </div>
           </div>
 
           <hr />
 
-          Or <router-link to="/sign-up">click here</router-link> to sign up!
+          Эсвэл <router-link to="/sign-up">энд дарж</router-link> бүртгүүлнэ үү!
         </form>
       </div>
     </div>
