@@ -2,7 +2,7 @@
   <div class="page-checkout">
     <div class="columns is-multiline">
       <div class="column is-12">
-        <h1 class="title">Checkout</h1>
+        <h1 class="title">Захиалга баталгаажуулах</h1>
       </div>
 
       <div class="column is-12 box">
@@ -36,7 +36,7 @@
       </div>
 
       <div class="column is-12 box">
-        <h2 class="subtitle">Хүргэх хаяг</h2>
+        <h2 class="title">Хүргэх хаяг</h2>
 
         <p class="has-text-grey mb-4">* Бүх талбарыг бөглөнө үү</p>
 
@@ -107,7 +107,7 @@
           <hr />
 
           <button class="button is-dark" @click="submitForm">
-            Pay with Stripe
+            Төлбөр төлөх
           </button>
         </template>
       </div>
