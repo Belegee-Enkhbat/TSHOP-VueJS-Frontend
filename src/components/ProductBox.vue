@@ -9,7 +9,7 @@
       <p class="is-size-6 has-text-grey">${{ product.price }}</p>
       <div class="grid">
       <div class="control">
-        <a class="button is-dark" @click="addToCart">Add to cart</a>
+        <a class="button is-dark" @click="addToCart">Сагсанд нэмэх</a>
       </div>
 
       <router-link v-bind:to="product.get_absolute_url" class="button is-primary mt-4">Дэлгэрэнгүй</router-link>

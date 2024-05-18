@@ -22,7 +22,7 @@
           </div>
 
           <div class="control">
-            <a class="button is-dark" @click="addToCart">Add to cart</a>
+            <a class="button is-dark" @click="addToCart">Сагсанд нэмэх</a>
           </div>
         </div>
       </div>
