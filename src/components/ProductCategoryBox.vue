@@ -1,17 +1,13 @@
 <template>
   <div class="column is-3">
     <div class="box">
-      <figure class="image mb-4">
-        <img v-bind:src="category.get_thumbnail" />
-      </figure>
+      <router-link :to="category.get_absolute_url">
+        <figure class="image mb-4">
+          <img :src="category.get_thumbnail" alt="Category Image" />
+        </figure>
+      </router-link>
 
-      <h3 class="is-size-4">{{ category.name }}</h3>
-      <h3 class="is-size-4">{{ category.id }}</h3>
-      <router-link
-        v-bind:to="category.get_absolute_url"
-        class="button is-primary mt-4"
-        >Дэлгэрэнгүй</router-link
-      >
+      <p class="text-secondary">{{ category.name }}</p>
     </div>
   </div>
 </template>
@@ -32,5 +28,10 @@ export default {
   margin-right: -1.25rem;
   height: 380px;
   overflow: hidden;
+}
+
+p{
+  text-align: center;
+  display: grid;
 }
 </style>

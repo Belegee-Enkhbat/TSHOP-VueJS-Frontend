@@ -5,11 +5,7 @@
         <h2 class="is-size-2 has-text-centered">{{ category.name }}</h2>
       </div>
 
-      <ProductBox
-        v-for="product in category.products"
-        v-bind:key="product.id"
-        v-bind:product="product"
-      />
+      <ProductBox v-for="product in category.products" v-bind:key="product.id" v-bind:product="product" />
     </div>
   </div>
 </template>
@@ -46,31 +42,38 @@ export default {
   methods: {
     async getCategory() {
       const categorySlug = this.$route.params.category_slug;
-
       this.$store.commit("setIsLoading", true);
 
-      await axios
-        .get(`/api/v1/products/${categorySlug}/`)
-        .then((response) => {
-          this.category = response.data;
+      try {
+        let response;
+        if (categorySlug === 'product') {
+          console.log('yes');
+          response = await axios.get(`/api/v1/latest-products/`);
+          console.log(response)
+          this.category.products=response.data
+        } else {
+          response = await axios.get(`/api/v1/products/${categorySlug}/`);
+          console.log(response)
+         this.category = response.data;
 
-          document.title = this.category.name + " | Glee";
-        })
-        .catch((error) => {
-          console.log(error);
+        }
 
-          toast({
-            message: "Something went wrong. Please try again.",
-            type: "is-danger",
-            dismissible: true,
-            pauseOnHover: true,
-            duration: 2000,
-            position: "bottom-right",
-          });
+        document.title = this.category.name + " | Glee";
+      } catch (error) {
+        console.log(error);
+        toast({
+          message: "Something went wrong. Please try again.",
+          type: "is-danger",
+          dismissible: true,
+          pauseOnHover: true,
+          duration: 2000,
+          position: "bottom-right",
         });
+      } finally {
+        this.$store.commit("setIsLoading", false);
+      }
+    }
 
-      this.$store.commit("setIsLoading", false);
-    },
   },
 };
 </script>

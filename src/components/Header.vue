@@ -29,11 +29,6 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <template v-if="$store.state.user == 'super'">
-              <router-link to="/ManageProduct" class="button is-success">
-                <h4>Бүтээгдэхүүн нэмэх</h4>
-              </router-link>
-            </template>
 
             <router-link to="/product" class="button is-success">
               <h4>Бараа</h4>

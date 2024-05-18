@@ -12,37 +12,28 @@
       </div>
       <div>
         <label for="description">Description:</label>
-        <textarea
-          id="description"
-          v-model="postData.description"
-          required
-        ></textarea>
+        <textarea id="description" v-model="postData.description" required></textarea>
+      </div>
+      <div class="option-container">
+          <label for="options">Choose an option:</label>
+          <select id="options" name="options">
+              <option value="1">Утас</option>
+              <option value="7">Камер</option>
+              <option value="8">Компвьютер</option>
+              <option value="9">Speaker</option>
+          </select>
       </div>
       <div>
         <label for="price">Price:</label>
-        <input
-          type="number"
-          id="price"
-          v-model.number="postData.price"
-          required
-          min="0"
-        />
+        <input type="number" id="price" v-model.number="postData.price" required min="0" />
       </div>
       <div>
         <label for="image">Image:</label>
-        <input
-          type="file"
-          id="image"
-          @change="handleFileUpload('image', $event)"
-        />
+        <input type="file" id="image" @change="handleFileUpload('image', $event)" />
       </div>
       <div>
         <label for="thumbnail">Thumbnail:</label>
-        <input
-          type="file"
-          id="thumbnail"
-          @change="handleFileUpload('thumbnail', $event)"
-        />
+        <input type="file" id="thumbnail" @change="handleFileUpload('thumbnail', $event)" />
       </div>
       <button type="submit">Submit</button>
     </form>
@@ -75,7 +66,6 @@ const handleFileUpload = (key, event) => {
       postData[key] = reader.result;
       postData.thumbnail_name = file.name;
     };
-    // Read the file as a data URL (base64 string)
     reader.readAsDataURL(file); 
   } else {
     console.log("No file selected.");
@@ -100,7 +90,6 @@ const submitPost = async () => {
     );
     console.log("Response status:", response.status);
     if (response.status === 201) {
-      // Assuming 201 means successful creation
       console.log("Post created successfully:", response.data);
       postData.value.name = "";
       postData.value.slug = "";
@@ -155,7 +144,8 @@ function getCookie(name) {
 .form-container input[type="text"],
 .form-container input[type="number"],
 .form-container input[type="file"],
-.form-container textarea {
+.form-container textarea,
+.form-container select {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;

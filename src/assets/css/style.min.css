@@ -3461,6 +3461,19 @@ body {
   overflow-wrap: break-word;
   font-family: 'Open Sans';
   font-weight: 700;
-  font-size: 25px;
+  font-size: 30px;
+  padding-left: 100px;
   color: #A91818;
+}
+
+
+.text-secondary {
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: black;
+  margin: 0 auto; /* Center the element */
+  align-content: center;
 }
