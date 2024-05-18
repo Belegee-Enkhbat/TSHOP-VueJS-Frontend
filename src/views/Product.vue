@@ -31,11 +31,11 @@
       <div class="column is-9">
         <h2 class="title">Үнэлгээ:</h2>
         <div v-for="review in reviews" :key="review.id" class="review-wrapper">
-          <p class="title">Review</p>
-          <p>User_name: {{ review.user }}</p>
-          <p>Stars: {{ review.stars }}</p>
-          <p class="review-wrapper__text">Review text:{{ review.content }}</p>
-          <p>Date: {{ review.date_added }}</p>
+          <p class="title">Үнэлгээний түүх</p>
+          <p>Хэрэглэгч: Хэрэглэгч{{ review.user }}</p>
+          <p>Үнэлгээ: {{ review.stars }}</p>
+          <p class="review-wrapper__text">Сэтгэгдэл :{{ review.content }}</p>
+          <p>Огноо: {{ review.date_added }}</p>
         </div>
 
         <div>
@@ -86,7 +86,9 @@
   }
 }
 
-
+.review-card2__price{
+  color:#2292a5;
+}
 
 /* Overall container for columns */
 .columns {
