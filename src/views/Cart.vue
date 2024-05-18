@@ -9,7 +9,7 @@
         <table class="table is-fullwidth" v-if="getTotalQuantity">
           <thead>
             <tr>
-              <th>Бүтээгдэхүүн</th>
+              <th>Бараа</th>
               <th>Үнэ</th>
               <th>Тоо ширхэг</th>
               <th>Нийт</th>
@@ -27,7 +27,7 @@
           </tbody>
         </table>
 
-        <p v-else>Таны картанд ямар наган бүтээгдэхүүн байхгүй байна...</p>
+        <p v-else>Таны картанд ямар наган Бараа байхгүй байна...</p>
       </div>
 
       <div class="column is-12 box">
