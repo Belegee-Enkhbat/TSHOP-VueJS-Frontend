@@ -6,7 +6,7 @@
       }}</router-link>
     </td>
     <td>${{ item.product.price }}</td>
-    <td>
+    <td class="smallitems">
       {{ item.quantity }}
       <a @click="decrementQuantity(item)">-</a>
       <a @click="incrementQuantity(item)">+</a>
@@ -56,3 +56,12 @@ export default {
   },
 };
 </script>
+<style>
+.smallitems{
+  display: flex;
+  gap: 5px;
+  & a{
+    color: black;
+  }
+}
+</style>

@@ -30,11 +30,11 @@
         <p v-else>Таны картанд ямар наган Бараа байхгүй байна...</p>
       </div>
 
-      <div class="column is-12 box">
+      <div class="column is-12 box" id="totalprice">
         <h2 class="subtitle">Эцсийн дүн</h2>
 
         <strong>${{ getTotalPrice.toFixed(2) }}</strong
-        >, {{ getTotalQuantity }} items
+        >, {{ getTotalQuantity }} ширхэг
 
         <hr />
 
@@ -82,3 +82,15 @@ export default {
   },
 };
 </script>
+<style>
+.column.is-12.box{
+  padding-left: 3rem;
+}
+#totalprice{
+  padding-left: 85%;
+}
+
+.page-cart{
+  padding: 5rem;
+}
+</style>

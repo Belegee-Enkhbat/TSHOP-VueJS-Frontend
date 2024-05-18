@@ -12,13 +12,7 @@
       </label>
     </div>
 
-    <div class="filter-category">
-      <h3>Brand</h3>
-      <label v-for="item in brands" :key="item">
-        <input type="radio" v-model="selectedBrand" :value="item" />
-        {{ item }}
-      </label>
-    </div>
+
 
     <div class="filter-category">
       <h3>Price Range</h3>
@@ -28,13 +22,7 @@
       </label>
     </div>
 
-    <div class="filter-category">
-      <h3>Type</h3>
-      <label v-for="item in types" :key="item">
-        <input type="radio" v-model="selectedType" :value="item" />
-        {{ item }}
-      </label>
-    </div>
+
   </div>
 </template>
 
@@ -42,10 +30,8 @@
 export default {
   data() {
     return {
-      categories: ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'],
-      brands: ['Brand A', 'Brand B', 'Brand C', 'Brand D'],
+      categories: ['Утас', 'Компюьтер', 'Камер', 'Speaker'],
       priceRanges: ['< $500', '$500 - $1000', '$1000 - $1500', '> $1500'],
-      types: ['Type A', 'Type B', 'Type C'],
       selectedCategory: '',
       selectedBrand: '',
       selectedRam: '',

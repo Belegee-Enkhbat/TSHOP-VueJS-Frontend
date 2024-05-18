@@ -32,19 +32,23 @@ export default createStore({
       }
     },
     addToCart(state, item) {
-      const exists = state.cart.items.filter(
-        (i) => i.product.id === item.product.id
-      );
+      // Барааны ID-г түлхүүр болгон HashMap үүсгэх
+      const cartMap = new Map(state.cart.items.map(i => [i.product.id, i]));
 
-      if (exists.length) {
-        exists[0].quantity =
-          parseInt(exists[0].quantity) + parseInt(item.quantity);
+      // Бараа аль хэдийн сагсанд байгаа эсэхийг шалгах
+      if (cartMap.has(item.product.id)) {
+        // Барааны тоог нэмэгдүүлэх
+        const existingItem = cartMap.get(item.product.id);
+        existingItem.quantity = parseInt(existingItem.quantity) + parseInt(item.quantity);
       } else {
+        // Шинэ барааг сагсанд нэмэх
         state.cart.items.push(item);
       }
 
+      // Сагсыг localStorage-д хадгалах
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
+
     setIsLoading(state, status) {
       state.isLoading = status;
     },
