@@ -3,7 +3,8 @@
     <div class="catalog-card2">
       <div class="catalog-card2__imgbox">
         <figure class="image mb-6">
-          <img v-bind:src="product.get_image" />
+          <img v-bind:src="product.get_thumbnail" />
+
         </figure>
       </div>
       <div class="catalog-card2__description">
@@ -38,10 +39,12 @@
         </div>
 
         <div>
-          <form @submit.prevent="submitReview">
+          <form  class="formreview" @submit.prevent="submitReview">
+            <div>
             <label for="content">Сэтгэгдэл</label>
             <textarea v-model="review.content" id="content" required></textarea>
-
+            </div>
+            <div>
             <label for="stars">Од</label>
             <input
               v-model.number="review.stars"
@@ -50,7 +53,7 @@
               required
               max="5"
             />
-
+            </div>
             <button type="submit">Илгээх</button>
           </form>
         </div>
@@ -82,6 +85,79 @@
     color: #2292a5;
   }
 }
+
+
+
+/* Overall container for columns */
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Main column */
+.column.is-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Title styling */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Review wrapper styling */
+.review-wrapper {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Review text styling */
+.review-wrapper__text {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Form styling */
+form {
+  margin-top: 30px;
+}
+
+form label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+form textarea,
+form input[type="number"] {
+  width: 40%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+form button {
+  padding: 10px 15px;
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
 </style>
 
 <script>
