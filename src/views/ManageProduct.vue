@@ -3,39 +3,35 @@
     <h1>Create New Product</h1>
     <form @submit.prevent="submitPost">
       <div>
-        <label for="name">Name:</label>
+        <label for="name">Нэр:</label>
         <input type="text" id="name" v-model="postData.name" required />
       </div>
       <div>
-        <label for="slug">Slug:</label>
+        <label for="slug">Товч нэр:</label>
         <input type="text" id="slug" v-model="postData.slug" required />
       </div>
       <div>
-        <label for="description">Description:</label>
+        <label for="description">Дэлгэрэнгүй мэдээлэл:</label>
         <textarea id="description" v-model="postData.description" required></textarea>
       </div>
       <div class="option-container">
-          <label for="options">Choose an option:</label>
-          <select id="options" name="options">
+          <label for="options">Ангилал:</label>
+          <select id="options" name="options" v-model="postData.category_id">
               <option value="1">Утас</option>
-              <option value="7">Камер</option>
-              <option value="8">Компвьютер</option>
+              <option value="8">Камер</option>
+              <option value="7">Компьютер</option>
               <option value="9">Speaker</option>
           </select>
       </div>
       <div>
-        <label for="price">Price:</label>
+        <label for="price">Үнэ:</label>
         <input type="number" id="price" v-model.number="postData.price" required min="0" />
       </div>
       <div>
-        <label for="image">Image:</label>
-        <input type="file" id="image" @change="handleFileUpload('image', $event)" />
-      </div>
-      <div>
-        <label for="thumbnail">Thumbnail:</label>
+        <label for="thumbnail">Зураг:</label>
         <input type="file" id="thumbnail" @change="handleFileUpload('thumbnail', $event)" />
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit">Нэмэх</button>
     </form>
   </div>
 </template>
@@ -76,7 +72,7 @@ const submitPost = async () => {
   try {
     const { id, ...postDataWithoutId } = postData.value; // Exclude the 'id' from postData
     const postDataToSend = { ...postDataWithoutId, thumbnail: postData.thumbnail, thumbnail_name: postData.thumbnail_name };
-
+    console.log("cate", postDataToSend.category_id)
     const csrfToken = getCookie("csrftoken");
     const response = await axios.post(
       "/api/v1/products/create_product",
