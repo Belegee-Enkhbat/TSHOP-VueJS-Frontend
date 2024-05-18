@@ -1,6 +1,6 @@
 <template>
   <div class="form-container">
-    <h1>Create New Product</h1>
+    <h1 class="text-secondary">Бүтээгдэхүүн нэмэх</h1>
     <form @submit.prevent="submitPost">
       <div>
         <label for="name">Нэр:</label>
@@ -137,6 +137,10 @@ function getCookie(name) {
   font-weight: bold;
 }
 
+h1{
+  text-align: center;
+  display: grid;
+}
 .form-container input[type="text"],
 .form-container input[type="number"],
 .form-container input[type="file"],
