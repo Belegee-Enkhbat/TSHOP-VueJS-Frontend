@@ -1,6 +1,6 @@
 <template>
   <div class="form-container">
-    <h1>Create New Product</h1>
+    <h1 class="text-secondary">Бараа нэмэх</h1>
     <form @submit.prevent="submitPost">
       <div>
         <label for="name">Нэр:</label>
@@ -94,7 +94,7 @@ const submitPost = async () => {
       postData.value.image = "uploads/gettyimages-999362376-612x612.jpg";
       postData.value.thumbnail =
         "/uploads/uploads/gettyimages-999362376-612x612.jpg";
-      window.alert("Бүтээгдэхүүн амжилттай үүслээ");
+      window.alert("Бараа амжилттай үүслээ");
     } 
     else {
       console.error("Failed to create post:", response.status, response.data);
@@ -137,6 +137,10 @@ function getCookie(name) {
   font-weight: bold;
 }
 
+h1{
+  text-align: center;
+  display: grid;
+}
 .form-container input[type="text"],
 .form-container input[type="number"],
 .form-container input[type="file"],

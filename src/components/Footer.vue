@@ -21,7 +21,7 @@
           <li class="footer-bot__menu-item">
             <template v-if="$store.state.user == 'super'">
               <router-link to="/ManageProduct" class="button is-success">
-                <p class="footer-bot__menu-link">Бүтээгдэхүүн нэмэх</p>
+                <p class="footer-bot__menu-link">Бараа нэмэх</p>
               </router-link>
             </template>
           </li>

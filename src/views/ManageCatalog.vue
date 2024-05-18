@@ -1,18 +1,18 @@
 <template>
   <div class="form-container">
-    <h1>Ангилал үүсгэх</h1>
+    <h1 class="text-secondary">Ангилал нэмэх</h1>
     <form @submit.prevent="submitPost">
       <div>
         <label for="name">Нэр:</label>
         <input type="text" id="name" v-model="postData.name" required />
       </div>
       <div>
-        <label for="slug">Slug:</label>
+        <label for="slug">Товч нэр:</label>
         <input type="text" id="slug" v-model="postData.slug" required />
       </div>
-      <label for="thumbnail">Thumbnail:</label>
+      <label for="thumbnail">Зураг:</label>
       <input type="file" id="thumbnail" @change="handleFileUpload('thumbnail', $event)" />
-      <button type="submit">Submit</button>
+      <button type="submit">Нэмэх</button>
     </form>
   </div>
 </template>
@@ -110,6 +110,11 @@ function getCookie(name) {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+}
+
+h1{
+  text-align: center;
+  display: grid;
 }
 
 .form-container input[type="text"],

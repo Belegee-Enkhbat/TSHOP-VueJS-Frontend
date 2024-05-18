@@ -37,17 +37,21 @@
               <span class="icon"><i class="fas fa-shopping-cart"></i></span>
               <span>Сагс {{ getTotalQuantity }}</span>
             </router-link>
-            <router-link to="/about" class="button is-success">
-              <h4>Бидэнтэй холбогдох</h4>
-            </router-link>
+
             <template v-if="$store.state.isAuthenticated">
               <router-link to="/my-account" class="button is-light">
-                <h4>Миний бүртгэл</h4>
+                <h4>Захиалгын түүх</h4>
               </router-link>
+              <router-link to="/about" class="button is-success">
+              <h4>Бидэнтэй холбогдох</h4>
+              </router-link>              
               <button @click="logoutHandler()" class="button is-danger">Гарах</button>
             </template>
 
             <template v-else>
+              <router-link to="/about" class="button is-success">
+              <h4>Бидэнтэй холбогдох</h4>
+              </router-link>
               <router-link to="/log-in" class="button is-light">
                 <h4>Нэвтрэх</h4>
               </router-link>

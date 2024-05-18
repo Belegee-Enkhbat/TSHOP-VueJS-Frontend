@@ -9,10 +9,10 @@
         <table class="table is-fullwidth">
           <thead>
             <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
+              <th>Бараа</th>
+              <th>Үнэ</th>
+              <th>Тоо хэмжээ</th>
+              <th>Нийт дүн</th>
             </tr>
           </thead>
 
@@ -27,7 +27,7 @@
 
           <tfoot>
             <tr>
-              <td colspan="2">Total</td>
+              <td colspan="2">Нийт дүн</td>
               <td>{{ getTotalQuantity }}</td>
               <td>${{ getTotalPrice.toFixed(2) }}</td>
             </tr>
@@ -36,35 +36,35 @@
       </div>
 
       <div class="column is-12 box">
-        <h2 class="subtitle">Shipping details</h2>
+        <h2 class="subtitle">Хүргэх хаяг</h2>
 
-        <p class="has-text-grey mb-4">* All fields are required</p>
+        <p class="has-text-grey mb-4">* Бүх талбарыг бөглөнө үү</p>
 
         <div class="columns is-multiline">
           <div class="column is-6">
             <div class="field">
-              <label>First name*</label>
+              <label>Нэр*</label>
               <div class="control">
                 <input type="text" class="input" v-model="first_name" />
               </div>
             </div>
 
             <div class="field">
-              <label>Last name*</label>
+              <label>Овог*</label>
               <div class="control">
                 <input type="text" class="input" v-model="last_name" />
               </div>
             </div>
 
             <div class="field">
-              <label>E-mail*</label>
+              <label>И-мейл*</label>
               <div class="control">
                 <input type="email" class="input" v-model="email" />
               </div>
             </div>
 
             <div class="field">
-              <label>Phone*</label>
+              <label>Утас*</label>
               <div class="control">
                 <input type="text" class="input" v-model="phone" />
               </div>
@@ -73,21 +73,21 @@
 
           <div class="column is-6">
             <div class="field">
-              <label>Address*</label>
+              <label>Хаяг*</label>
               <div class="control">
                 <input type="text" class="input" v-model="address" />
               </div>
             </div>
 
             <div class="field">
-              <label>Zip code*</label>
+              <label>Зип код*</label>
               <div class="control">
                 <input type="text" class="input" v-model="zipcode" />
               </div>
             </div>
 
             <div class="field">
-              <label>Place*</label>
+              <label>Дүүрэг*</label>
               <div class="control">
                 <input type="text" class="input" v-model="place" />
               </div>
